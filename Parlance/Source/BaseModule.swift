@@ -6,7 +6,7 @@
 //  Copyright © 2017 Brian Radebaugh. All rights reserved.
 //
 
-protocol BaseModule {
+public protocol BaseModule {
     // Provided by extension
     static func t(_ key: Key) -> String
     
@@ -19,7 +19,7 @@ protocol BaseModule {
     func t(_ key: Key) -> String
 }
 
-extension BaseModule {
+public extension BaseModule {
     static func t(_ key: Key) -> String {
         return Self.shared.t(key)
     }

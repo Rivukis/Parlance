@@ -22,7 +22,7 @@ public protocol LocaleCoordinatable {
     func category(for int: Int, language: Language) -> PluralCategory
 }
 
-extension LocaleCoordinatable {
+public extension LocaleCoordinatable {
     var currentLanguage: Language {
         return currentLanguage(for: Locale.current)
     }

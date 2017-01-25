@@ -11,7 +11,7 @@
  Curry -> category(for:using:) to be just category(for:)
  */
 
-protocol SpecificModule {
+public protocol SpecificModule {
     // Provided by extension
     static func t(_ key: Key) -> String
     func category(for int: Int) -> PluralCategory
@@ -26,13 +26,13 @@ protocol SpecificModule {
     func t(_ key: Key) -> String
 }
 
-extension SpecificModule {
+public extension SpecificModule {
     static func t(_ key: Key) -> String {
         return Self.shared.t(key)
     }
 }
 
-extension SpecificModule where PluralCategory.RawValue == String {
+public extension SpecificModule where PluralCategory.RawValue == String {
     func category(for int: Int) -> PluralCategory {
         let rawValue = _LocaleCoordinator.shared.rawCategory(for: int)
         guard let category = PluralCategory(rawValue: rawValue) else {
