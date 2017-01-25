@@ -6,16 +6,21 @@
 //  Copyright © 2017 Brian Radebaugh. All rights reserved.
 //
 
+/* TODO: to get rid of specifying LocaleCoordinator
+ Type Erasure -> AnyLocaleCoordinator
+ Curry -> category(for:using:) to be just category(for:)
+ */
+
 protocol SpecificModule {
     // Provided by extension
     static func t(_ key: Key) -> String
-    func category(for int: Int) -> PluralCategory
+    func category<T: LocaleCoordinatable>(for int: Int, using localeCoordinator: T) -> PluralCategory
     
     // Can be infered from instance function `t()`
     associatedtype Key
     
     // Required
-    associatedtype PluralCategory: RawRepresentable // ONLY include values from 'PluralCategory'
+    associatedtype PluralCategory: RawRepresentable // ONLY include values from 'PluralCategory' && RawValue == String
     static var shared: Self { get }
     func t(_ key: Key) -> String
 }

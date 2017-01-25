@@ -8,31 +8,29 @@
 
 import UIKit
 
-// TODO: Use Parlance class
-
 class SignInViewController: UIViewController {
     @IBOutlet weak var nameTextField: UITextField! {
         didSet {
             nameTextField.delegate = self
-            nameTextField.placeholder = "enter name"
+            nameTextField.placeholder = SignInParlance.t(.namePlaceholder)
         }
     }
     @IBOutlet weak var passwordTextField: UITextField! {
         didSet {
             passwordTextField.delegate = self
-            passwordTextField.placeholder = "enter password"
+            passwordTextField.placeholder = SignInParlance.t(.passwordPlaceholder)
         }
     }
     @IBOutlet weak var signInButton: UIButton! {
         didSet {
             signInButton.layer.cornerRadius = 5
-            signInButton.setTitle("sign in", for: .normal)
+            signInButton.setTitle(SignInParlance.t(.signInButtonText), for: .normal)
         }
     }
     @IBOutlet weak var cancelButton: UIButton! {
         didSet {
             cancelButton.layer.cornerRadius = 5
-            cancelButton.setTitle("cancel", for: .normal)
+            cancelButton.setTitle(SignInParlance.t(.cancelButtonText), for: .normal)
         }
     }
     

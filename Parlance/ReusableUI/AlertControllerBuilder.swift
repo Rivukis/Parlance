@@ -12,14 +12,18 @@ enum AlertType {
     case signedOut
 }
 
-// TODO: Use an injected instance of Parlance Module
-
 class AlertControllerBuilder {
+    let parlance: ReusableUIParlance
+    
+    init(parlance: ReusableUIParlance) {
+        self.parlance = parlance
+    }
+    
     func alertController(withType type: AlertType) -> UIAlertController {
         switch type {
         case .signedOut:
-            let alertController = UIAlertController(title: "Signed out", message: nil, preferredStyle: .alert)
-            let acceptAction = UIAlertAction(title: "OK", style: .default)
+            let alertController = UIAlertController(title: parlance.t(.signOutAlertTitle), message: nil, preferredStyle: .alert)
+            let acceptAction = UIAlertAction(title: parlance.t(.alertAcceptanceText), style: .default)
             alertController.addAction(acceptAction)
             return alertController
         }

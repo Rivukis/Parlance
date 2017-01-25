@@ -15,6 +15,12 @@
 		7A242F8B1E38A26300FA7A5E /* Parlance.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7A242F861E38A26300FA7A5E /* Parlance.swift */; };
 		7A242F8C1E38A26300FA7A5E /* PluralCategory.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7A242F871E38A26300FA7A5E /* PluralCategory.swift */; };
 		7A242F8D1E38A26300FA7A5E /* SpecificModule.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7A242F881E38A26300FA7A5E /* SpecificModule.swift */; };
+		7A242F911E38A3F900FA7A5E /* SignInParlance.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7A242F901E38A3F900FA7A5E /* SignInParlance.swift */; };
+		7A242F941E38A50200FA7A5E /* ParlanceEnglish.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7A242F931E38A50200FA7A5E /* ParlanceEnglish.swift */; };
+		7A242F961E38A51B00FA7A5E /* LocaleCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7A242F951E38A51B00FA7A5E /* LocaleCoordinator.swift */; };
+		7A242F981E38AA5000FA7A5E /* WelcomeParlance.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7A242F971E38AA5000FA7A5E /* WelcomeParlance.swift */; };
+		7A242F9A1E38AC0C00FA7A5E /* ReusableUIParlance.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7A242F991E38AC0C00FA7A5E /* ReusableUIParlance.swift */; };
+		7A242F9C1E38ADBB00FA7A5E /* ParlanceSpanish.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7A242F9B1E38ADBB00FA7A5E /* ParlanceSpanish.swift */; };
 		7A69D0D21E388824008C9C61 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7A69D0D11E388824008C9C61 /* AppDelegate.swift */; };
 		7A69D0D71E388825008C9C61 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 7A69D0D51E388825008C9C61 /* Main.storyboard */; };
 		7A69D0D91E388825008C9C61 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 7A69D0D81E388825008C9C61 /* Assets.xcassets */; };
@@ -31,6 +37,12 @@
 		7A242F861E38A26300FA7A5E /* Parlance.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Parlance.swift; path = Source/Parlance.swift; sourceTree = "<group>"; };
 		7A242F871E38A26300FA7A5E /* PluralCategory.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = PluralCategory.swift; path = Source/PluralCategory.swift; sourceTree = "<group>"; };
 		7A242F881E38A26300FA7A5E /* SpecificModule.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = SpecificModule.swift; path = Source/SpecificModule.swift; sourceTree = "<group>"; };
+		7A242F901E38A3F900FA7A5E /* SignInParlance.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = SignInParlance.swift; path = SignInModule/SignInParlance.swift; sourceTree = "<group>"; };
+		7A242F931E38A50200FA7A5E /* ParlanceEnglish.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ParlanceEnglish.swift; path = Parlance/ParlanceEnglish.swift; sourceTree = "<group>"; };
+		7A242F951E38A51B00FA7A5E /* LocaleCoordinator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = LocaleCoordinator.swift; path = Parlance/LocaleCoordinator.swift; sourceTree = "<group>"; };
+		7A242F971E38AA5000FA7A5E /* WelcomeParlance.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = WelcomeParlance.swift; path = WelcomeModule/WelcomeParlance.swift; sourceTree = "<group>"; };
+		7A242F991E38AC0C00FA7A5E /* ReusableUIParlance.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ReusableUIParlance.swift; path = ReusableUI/ReusableUIParlance.swift; sourceTree = "<group>"; };
+		7A242F9B1E38ADBB00FA7A5E /* ParlanceSpanish.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ParlanceSpanish.swift; path = Parlance/ParlanceSpanish.swift; sourceTree = "<group>"; };
 		7A69D0CE1E388824008C9C61 /* Parlance.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Parlance.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		7A69D0D11E388824008C9C61 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		7A69D0D61E388825008C9C61 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -55,6 +67,7 @@
 			isa = PBXGroup;
 			children = (
 				7A69D0E41E388917008C9C61 /* WelcomeViewController.swift */,
+				7A242F971E38AA5000FA7A5E /* WelcomeParlance.swift */,
 			);
 			name = WelcomeModule;
 			sourceTree = "<group>";
@@ -63,6 +76,7 @@
 			isa = PBXGroup;
 			children = (
 				7A242F791E388B5A00FA7A5E /* SignInViewController.swift */,
+				7A242F901E38A3F900FA7A5E /* SignInParlance.swift */,
 			);
 			name = SignInModule;
 			sourceTree = "<group>";
@@ -71,6 +85,7 @@
 			isa = PBXGroup;
 			children = (
 				7A242F7E1E3899EC00FA7A5E /* AlertControllerBuilder.swift */,
+				7A242F991E38AC0C00FA7A5E /* ReusableUIParlance.swift */,
 			);
 			name = ReusableUI;
 			sourceTree = "<group>";
@@ -85,6 +100,16 @@
 				7A242F881E38A26300FA7A5E /* SpecificModule.swift */,
 			);
 			name = Source;
+			sourceTree = "<group>";
+		};
+		7A242F921E38A4E100FA7A5E /* Parlance */ = {
+			isa = PBXGroup;
+			children = (
+				7A242F951E38A51B00FA7A5E /* LocaleCoordinator.swift */,
+				7A242F931E38A50200FA7A5E /* ParlanceEnglish.swift */,
+				7A242F9B1E38ADBB00FA7A5E /* ParlanceSpanish.swift */,
+			);
+			name = Parlance;
 			sourceTree = "<group>";
 		};
 		7A69D0C51E388824008C9C61 = {
@@ -108,6 +133,7 @@
 			children = (
 				7A69D0D51E388825008C9C61 /* Main.storyboard */,
 				7A69D0D11E388824008C9C61 /* AppDelegate.swift */,
+				7A242F921E38A4E100FA7A5E /* Parlance */,
 				7A242F7C1E3892DA00FA7A5E /* User.swift */,
 				7A242F801E3899F300FA7A5E /* ReusableUI */,
 				7A242F7B1E388B6200FA7A5E /* SignInModule */,
@@ -203,12 +229,18 @@
 			files = (
 				7A242F891E38A26300FA7A5E /* BaseModule.swift in Sources */,
 				7A242F7D1E3892DA00FA7A5E /* User.swift in Sources */,
+				7A242F961E38A51B00FA7A5E /* LocaleCoordinator.swift in Sources */,
 				7A69D0D21E388824008C9C61 /* AppDelegate.swift in Sources */,
 				7A242F8D1E38A26300FA7A5E /* SpecificModule.swift in Sources */,
 				7A69D0E51E388917008C9C61 /* WelcomeViewController.swift in Sources */,
+				7A242F941E38A50200FA7A5E /* ParlanceEnglish.swift in Sources */,
+				7A242F9A1E38AC0C00FA7A5E /* ReusableUIParlance.swift in Sources */,
 				7A242F7F1E3899EC00FA7A5E /* AlertControllerBuilder.swift in Sources */,
+				7A242F981E38AA5000FA7A5E /* WelcomeParlance.swift in Sources */,
 				7A242F8C1E38A26300FA7A5E /* PluralCategory.swift in Sources */,
 				7A242F8A1E38A26300FA7A5E /* LocaleCoordinatable.swift in Sources */,
+				7A242F9C1E38ADBB00FA7A5E /* ParlanceSpanish.swift in Sources */,
+				7A242F911E38A3F900FA7A5E /* SignInParlance.swift in Sources */,
 				7A242F7A1E388B5A00FA7A5E /* SignInViewController.swift in Sources */,
 				7A242F8B1E38A26300FA7A5E /* Parlance.swift in Sources */,
 			);

@@ -8,8 +8,6 @@
 
 import UIKit
 
-// TODO: Use shared instance of Parlance Module
-
 class WelcomeViewController: UIViewController {
     @IBOutlet weak var welcomeLabel: UILabel! {
         didSet {
@@ -19,17 +17,19 @@ class WelcomeViewController: UIViewController {
     @IBOutlet weak var signInButton: UIButton! {
         didSet {
             signInButton.layer.cornerRadius = 5
-            signInButton.setTitle("sign in", for: .normal)
+            let title = Parlance.t(WelcomeParlance.self, .signInButtonText)
+            signInButton.setTitle(title, for: .normal)
         }
     }
     @IBOutlet weak var signOutButton: UIButton! {
         didSet {
             signOutButton.layer.cornerRadius = 5
-            signOutButton.setTitle("sign out", for: .normal)
+            let title = Parlance.t(WelcomeParlance.self, .signOutButtonText)
+            signOutButton.setTitle(title, for: .normal)
         }
     }
     
-    let alertControllerBuilder = AlertControllerBuilder()
+    let alertControllerBuilder = AlertControllerBuilder(parlance: ReusableUIParlance.shared)
     
     // MARK: Lifecycle
     
@@ -57,9 +57,9 @@ class WelcomeViewController: UIViewController {
     
     func welcomeLabelText() -> String {
         if let user = User.currentUser {
-            return "Welcome, \(user.name)!"
+            return Parlance.t(WelcomeParlance.self, .welcomeMessage(name: user.name))
         }
         
-        return "Welcome!"
+        return Parlance.t(WelcomeParlance.self, .genericWelcomeMessage)
     }
 }
