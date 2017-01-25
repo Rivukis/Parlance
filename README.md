@@ -175,7 +175,12 @@ Parlance is available through [CocoaPods](http://cocoapods.org). To install
 it, simply add the following line to your Podfile:
 
 ```ruby
-pod "Parlance"
+platform :ios, "10.0"
+use_frameworks!
+
+target "<YOUR_TARGET>" do
+    pod "Parlance"
+end
 ```
 
 ## Author
