@@ -12,14 +12,14 @@ enum ReusableUIParlanceKey {
 }
 
 final class ReusableUIParlance: BaseModule {
+    typealias LocaleCoordinator = MyLocaleCoordinator
     static let shared = ReusableUIParlance()
     
-    let localeCoordinator = LocaleCoordinator()
     let en = ReusableUIParlance_en()
     let es = ReusableUIParlance_es()
     
     func t(_ key: ReusableUIParlanceKey) -> String {
-        switch localeCoordinator.currentLanguage {
+        switch currentLanguage {
         case .english:
             return en.t(key)
         case .spanish:

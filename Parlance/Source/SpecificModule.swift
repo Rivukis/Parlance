@@ -14,12 +14,13 @@
 protocol SpecificModule {
     // Provided by extension
     static func t(_ key: Key) -> String
-    func category<T: LocaleCoordinatable>(for int: Int, using localeCoordinator: T) -> PluralCategory
+    func category(for int: Int) -> PluralCategory
     
     // Can be infered from instance function `t()`
     associatedtype Key
     
     // Required
+    associatedtype LocaleCoordinator: LocaleCoordinatable
     associatedtype PluralCategory: RawRepresentable // ONLY include values from 'PluralCategory' && RawValue == String
     static var shared: Self { get }
     func t(_ key: Key) -> String
@@ -32,8 +33,8 @@ extension SpecificModule {
 }
 
 extension SpecificModule where PluralCategory.RawValue == String {
-    func category<T: LocaleCoordinatable>(for int: Int, using localeCoordinator: T) -> PluralCategory {
-        let rawValue = localeCoordinator.rawCategory(for: int)
+    func category(for int: Int) -> PluralCategory {
+        let rawValue = LocaleCoordinator.shared.rawCategory(for: int)
         guard let category = PluralCategory(rawValue: rawValue) else {
             fatalError("\(type(of: PluralCategory.self)) does not have member \"\(rawValue)\".")
         }

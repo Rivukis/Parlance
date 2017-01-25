@@ -14,6 +14,7 @@ protocol BaseModule {
     associatedtype Key
     
     // Required
+    associatedtype LocaleCoordinator: LocaleCoordinatable
     static var shared: Self { get }
     func t(_ key: Key) -> String
 }
@@ -21,5 +22,9 @@ protocol BaseModule {
 extension BaseModule {
     static func t(_ key: Key) -> String {
         return Self.shared.t(key)
+    }
+    
+    var currentLanguage: LocaleCoordinator.Language {
+        return LocaleCoordinator.shared.currentLanguage
     }
 }

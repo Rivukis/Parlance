@@ -12,6 +12,7 @@ enum SpanishPluralCategory: String {
 }
 
 final class SignInParlance_es: SpecificModule {
+    typealias LocaleCoordinator = MyLocaleCoordinator
     typealias PluralCategory = SpanishPluralCategory
     static let shared = SignInParlance_es()
     
@@ -32,6 +33,7 @@ final class SignInParlance_es: SpecificModule {
 }
 
 final class WelcomeParlance_es: SpecificModule {
+    typealias LocaleCoordinator = MyLocaleCoordinator
     typealias PluralCategory = SpanishPluralCategory
     static let shared = WelcomeParlance_es()
     
@@ -52,6 +54,7 @@ final class WelcomeParlance_es: SpecificModule {
 }
 
 final class ReusableUIParlance_es: SpecificModule {
+    typealias LocaleCoordinator = MyLocaleCoordinator
     typealias PluralCategory = SpanishPluralCategory
     static let shared = ReusableUIParlance_es()
     

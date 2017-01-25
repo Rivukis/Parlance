@@ -14,14 +14,14 @@ enum SignInParlanceKey {
 }
 
 final class SignInParlance: BaseModule {
+    typealias LocaleCoordinator = MyLocaleCoordinator
     static let shared = SignInParlance()
     
-    let localeCoordinator = LocaleCoordinator()
     let en = SignInParlance_en()
     let es = SignInParlance_es()
     
     func t(_ key: SignInParlanceKey) -> String {
-        switch localeCoordinator.currentLanguage {
+        switch currentLanguage {
         case .english:
             return en.t(key)
         case .spanish:
