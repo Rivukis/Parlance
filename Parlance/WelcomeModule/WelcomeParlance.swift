@@ -14,18 +14,15 @@ enum WelcomeParlanceKey {
 }
 
 final class WelcomeParlance: BaseModule {
-    typealias LocaleCoordinator = MyLocaleCoordinator
+    typealias _LocaleCoordinator = LocaleCoordinator
     static let shared = WelcomeParlance()
-    
-    let en = WelcomeParlance_en()
-    let es = WelcomeParlance_es()
     
     func t(_ key: WelcomeParlanceKey) -> String {
         switch currentLanguage {
         case .english:
-            return en.t(key)
+            return WelcomeParlance_en.shared.t(key)
         case .spanish:
-            return es.t(key)
+            return WelcomeParlance_es.shared.t(key)
         }
     }
 }

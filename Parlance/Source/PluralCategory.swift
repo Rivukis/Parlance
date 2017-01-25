@@ -12,6 +12,7 @@
 
 /* Plural Rules Per Language
  http://www.unicode.org/cldr/charts/latest/supplemental/language_plural_rules.html
+ (Use Cardinal Type)
  */
 
 public enum PluralCategory: String {

@@ -12,11 +12,11 @@ enum EnglishPluralCategory: String {
 }
 
 final class SignInParlance_en: SpecificModule {
-    typealias LocaleCoordinator = MyLocaleCoordinator
+    typealias _LocaleCoordinator = LocaleCoordinator
     typealias PluralCategory = EnglishPluralCategory
     static let shared = SignInParlance_en()
     
-    let localeCoordinator = LocaleCoordinator.shared
+    let localeCoordinator = _LocaleCoordinator.shared
     
     func t(_ key: SignInParlanceKey) -> String {
         switch key {
@@ -33,11 +33,11 @@ final class SignInParlance_en: SpecificModule {
 }
 
 final class WelcomeParlance_en: SpecificModule {
-    typealias LocaleCoordinator = MyLocaleCoordinator
+    typealias _LocaleCoordinator = LocaleCoordinator
     typealias PluralCategory = EnglishPluralCategory
     static let shared = WelcomeParlance_en()
     
-    let localeCoordinator = LocaleCoordinator.shared
+    let localeCoordinator = _LocaleCoordinator.shared
     
     func t(_ key: WelcomeParlanceKey) -> String {
         switch key {
@@ -54,11 +54,11 @@ final class WelcomeParlance_en: SpecificModule {
 }
 
 final class ReusableUIParlance_en: SpecificModule {
-    typealias LocaleCoordinator = MyLocaleCoordinator
+    typealias _LocaleCoordinator = LocaleCoordinator
     typealias PluralCategory = EnglishPluralCategory
     static let shared = ReusableUIParlance_en()
     
-    let localeCoordinator = LocaleCoordinator.shared
+    let localeCoordinator = _LocaleCoordinator.shared
     
     func t(_ key: ReusableUIParlanceKey) -> String {
         switch key {

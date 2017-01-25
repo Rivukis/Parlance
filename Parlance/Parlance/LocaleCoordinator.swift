@@ -13,8 +13,8 @@ enum Language {
     case spanish
 }
 
-final class MyLocaleCoordinator: LocaleCoordinatable {
-    static let shared = MyLocaleCoordinator()
+final class LocaleCoordinator: LocaleCoordinatable {
+    static let shared = LocaleCoordinator()
     
     func currentLanguage(for locale: Locale) -> Language {
         if locale.languageCode == "es" {
