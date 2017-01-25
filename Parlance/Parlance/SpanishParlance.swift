@@ -16,8 +16,6 @@ final class SignInParlance_es: SpecificModule {
     typealias PluralCategory = SpanishPluralCategory
     static let shared = SignInParlance_es()
     
-    let localeCoordinator = _LocaleCoordinator.shared
-    
     func t(_ key: SignInParlanceKey) -> String {
         switch key {
         case .namePlaceholder:
@@ -37,8 +35,6 @@ final class WelcomeParlance_es: SpecificModule {
     typealias PluralCategory = SpanishPluralCategory
     static let shared = WelcomeParlance_es()
     
-    let localeCoordinator = _LocaleCoordinator.shared
-    
     func t(_ key: WelcomeParlanceKey) -> String {
         switch key {
         case .signInButtonText:
@@ -57,8 +53,6 @@ final class ReusableUIParlance_es: SpecificModule {
     typealias _LocaleCoordinator = LocaleCoordinator
     typealias PluralCategory = SpanishPluralCategory
     static let shared = ReusableUIParlance_es()
-    
-    let localeCoordinator = _LocaleCoordinator.shared
     
     func t(_ key: ReusableUIParlanceKey) -> String {
         switch key {
