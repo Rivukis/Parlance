@@ -1,14 +1,19 @@
-<?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="11134" systemVersion="15F34" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="11762" systemVersion="16B2657" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11106"/>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11757"/>
+        <capability name="Constraints with non-1.0 multipliers" minToolsVersion="5.1"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--View Controller-->
+        <!--Welcome View Controller-->
         <scene sceneID="tne-QT-ifu">
             <objects>
-                <viewController id="BYZ-38-t0r" customClass="ViewController" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="BYZ-38-t0r" customClass="WelcomeViewController" customModule="Parlance" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="y3c-jy-aDJ"/>
                         <viewControllerLayoutGuide type="bottom" id="wfy-db-euE"/>
@@ -16,11 +21,126 @@
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="welcome label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="XZ6-HF-bZq">
+                                <rect key="frame" x="133" y="212" width="109" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="9ZU-uP-hE2">
+                                <rect key="frame" x="46.5" y="429.5" width="281" height="30"/>
+                                <color key="backgroundColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
+                                <state key="normal" title="sign in button">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <segue destination="KbP-jS-zwI" kind="presentation" id="914-Ys-Uxu"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Wfb-aN-GMR">
+                                <rect key="frame" x="46.5" y="479.5" width="281" height="30"/>
+                                <color key="backgroundColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
+                                <state key="normal" title="sign out button">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="signOutTapped:" destination="BYZ-38-t0r" eventType="touchUpInside" id="onj-Zw-JJl"/>
+                                </connections>
+                            </button>
+                        </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <constraints>
+                            <constraint firstItem="Wfb-aN-GMR" firstAttribute="width" secondItem="9ZU-uP-hE2" secondAttribute="width" id="59U-nx-89O"/>
+                            <constraint firstItem="XZ6-HF-bZq" firstAttribute="centerY" secondItem="wfy-db-euE" secondAttribute="top" multiplier="0.3333" id="D0D-Fj-cqP"/>
+                            <constraint firstItem="Wfb-aN-GMR" firstAttribute="centerX" secondItem="9ZU-uP-hE2" secondAttribute="centerX" id="DYl-GG-sSI"/>
+                            <constraint firstItem="Wfb-aN-GMR" firstAttribute="top" secondItem="9ZU-uP-hE2" secondAttribute="bottom" constant="20" id="EnJ-wu-Wv3"/>
+                            <constraint firstItem="9ZU-uP-hE2" firstAttribute="width" secondItem="8bC-Xf-vdC" secondAttribute="width" multiplier="0.75" id="WzG-Rd-Al8"/>
+                            <constraint firstItem="9ZU-uP-hE2" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="XFc-xe-u1H"/>
+                            <constraint firstItem="XZ6-HF-bZq" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="gRS-ur-fg6"/>
+                            <constraint firstItem="9ZU-uP-hE2" firstAttribute="centerY" secondItem="wfy-db-euE" secondAttribute="top" multiplier="0.6667" id="qGb-ab-ase"/>
+                        </constraints>
                     </view>
+                    <connections>
+                        <outlet property="signInButton" destination="9ZU-uP-hE2" id="OOG-5w-8Wy"/>
+                        <outlet property="signOutButton" destination="Wfb-aN-GMR" id="xLN-OA-IUf"/>
+                        <outlet property="welcomeLabel" destination="XZ6-HF-bZq" id="NES-KB-r5V"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
+        </scene>
+        <!--Sign In View Controller-->
+        <scene sceneID="Nb5-80-sCA">
+            <objects>
+                <viewController id="KbP-jS-zwI" customClass="SignInViewController" customModule="Parlance" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="ExZ-0G-PgW"/>
+                        <viewControllerLayoutGuide type="bottom" id="MHx-Yd-Tma"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="uSJ-tO-r7G">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="name placeholder" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="1Wf-sz-LLo">
+                                <rect key="frame" x="47" y="152" width="281" height="30"/>
+                                <nil key="textColor"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits" returnKeyType="next"/>
+                            </textField>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="D6T-Pf-fNe">
+                                <rect key="frame" x="46.5" y="252" width="281" height="30"/>
+                                <color key="backgroundColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
+                                <state key="normal" title="sign in button">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="signInTapped:" destination="KbP-jS-zwI" eventType="touchUpInside" id="H34-YY-xnN"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="QEI-Qe-eYh">
+                                <rect key="frame" x="46.5" y="302" width="281" height="30"/>
+                                <color key="backgroundColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
+                                <state key="normal" title="cancel button">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="cancelTapped:" destination="KbP-jS-zwI" eventType="touchUpInside" id="gLu-J3-pss"/>
+                                </connections>
+                            </button>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="password placeholder" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="te8-Id-sac">
+                                <rect key="frame" x="47" y="202" width="281" height="30"/>
+                                <nil key="textColor"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits" returnKeyType="done" secureTextEntry="YES"/>
+                            </textField>
+                        </subviews>
+                        <color key="backgroundColor" red="0.64474478260000001" green="1" blue="0.5845148564" alpha="1" colorSpace="calibratedRGB"/>
+                        <constraints>
+                            <constraint firstItem="te8-Id-sac" firstAttribute="top" secondItem="1Wf-sz-LLo" secondAttribute="bottom" constant="20" id="86f-vj-1cZ"/>
+                            <constraint firstItem="te8-Id-sac" firstAttribute="centerX" secondItem="1Wf-sz-LLo" secondAttribute="centerX" id="GBt-BH-auF"/>
+                            <constraint firstItem="D6T-Pf-fNe" firstAttribute="top" secondItem="te8-Id-sac" secondAttribute="bottom" constant="20" id="Mjw-GO-oOo"/>
+                            <constraint firstItem="1Wf-sz-LLo" firstAttribute="width" secondItem="uSJ-tO-r7G" secondAttribute="width" multiplier="0.75" id="TG8-hN-5DW"/>
+                            <constraint firstItem="1Wf-sz-LLo" firstAttribute="centerY" secondItem="MHx-Yd-Tma" secondAttribute="top" multiplier="0.25" id="Y04-th-dBS"/>
+                            <constraint firstItem="te8-Id-sac" firstAttribute="width" secondItem="1Wf-sz-LLo" secondAttribute="width" id="bID-bi-mT3"/>
+                            <constraint firstItem="QEI-Qe-eYh" firstAttribute="centerX" secondItem="D6T-Pf-fNe" secondAttribute="centerX" id="bOc-Op-aXh"/>
+                            <constraint firstItem="D6T-Pf-fNe" firstAttribute="centerX" secondItem="te8-Id-sac" secondAttribute="centerX" id="oHP-0i-XWb"/>
+                            <constraint firstItem="QEI-Qe-eYh" firstAttribute="width" secondItem="D6T-Pf-fNe" secondAttribute="width" id="rr2-d4-uj1"/>
+                            <constraint firstItem="1Wf-sz-LLo" firstAttribute="centerX" secondItem="uSJ-tO-r7G" secondAttribute="centerX" id="wSv-mC-PgR"/>
+                            <constraint firstItem="D6T-Pf-fNe" firstAttribute="width" secondItem="te8-Id-sac" secondAttribute="width" id="yhc-wc-U0J"/>
+                            <constraint firstItem="QEI-Qe-eYh" firstAttribute="top" secondItem="D6T-Pf-fNe" secondAttribute="bottom" constant="20" id="zFK-06-4Ax"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="cancelButton" destination="QEI-Qe-eYh" id="XoV-tg-KGd"/>
+                        <outlet property="nameTextField" destination="1Wf-sz-LLo" id="fXu-U9-he2"/>
+                        <outlet property="passwordTextField" destination="te8-Id-sac" id="yUu-Tm-eax"/>
+                        <outlet property="signInButton" destination="D6T-Pf-fNe" id="iUj-kK-2bV"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="1Jb-NL-z6h" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="895" y="38"/>
         </scene>
     </scenes>
 </document>
