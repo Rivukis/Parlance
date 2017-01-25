@@ -12,7 +12,6 @@
 		7A242F7F1E3899EC00FA7A5E /* AlertControllerBuilder.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7A242F7E1E3899EC00FA7A5E /* AlertControllerBuilder.swift */; };
 		7A242F891E38A26300FA7A5E /* BaseModule.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7A242F841E38A26300FA7A5E /* BaseModule.swift */; };
 		7A242F8A1E38A26300FA7A5E /* LocaleCoordinatable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7A242F851E38A26300FA7A5E /* LocaleCoordinatable.swift */; };
-		7A242F8B1E38A26300FA7A5E /* Parlance.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7A242F861E38A26300FA7A5E /* Parlance.swift */; };
 		7A242F8C1E38A26300FA7A5E /* PluralCategory.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7A242F871E38A26300FA7A5E /* PluralCategory.swift */; };
 		7A242F8D1E38A26300FA7A5E /* SpecificModule.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7A242F881E38A26300FA7A5E /* SpecificModule.swift */; };
 		7A242F911E38A3F900FA7A5E /* SignInParlance.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7A242F901E38A3F900FA7A5E /* SignInParlance.swift */; };
@@ -34,7 +33,6 @@
 		7A242F7E1E3899EC00FA7A5E /* AlertControllerBuilder.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = AlertControllerBuilder.swift; path = ReusableUI/AlertControllerBuilder.swift; sourceTree = "<group>"; };
 		7A242F841E38A26300FA7A5E /* BaseModule.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; lineEnding = 0; name = BaseModule.swift; path = Source/BaseModule.swift; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.swift; };
 		7A242F851E38A26300FA7A5E /* LocaleCoordinatable.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = LocaleCoordinatable.swift; path = Source/LocaleCoordinatable.swift; sourceTree = "<group>"; };
-		7A242F861E38A26300FA7A5E /* Parlance.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Parlance.swift; path = Source/Parlance.swift; sourceTree = "<group>"; };
 		7A242F871E38A26300FA7A5E /* PluralCategory.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = PluralCategory.swift; path = Source/PluralCategory.swift; sourceTree = "<group>"; };
 		7A242F881E38A26300FA7A5E /* SpecificModule.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; lineEnding = 0; name = SpecificModule.swift; path = Source/SpecificModule.swift; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.swift; };
 		7A242F901E38A3F900FA7A5E /* SignInParlance.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; lineEnding = 0; name = SignInParlance.swift; path = SignInModule/SignInParlance.swift; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.swift; };
@@ -95,7 +93,6 @@
 			children = (
 				7A242F841E38A26300FA7A5E /* BaseModule.swift */,
 				7A242F851E38A26300FA7A5E /* LocaleCoordinatable.swift */,
-				7A242F861E38A26300FA7A5E /* Parlance.swift */,
 				7A242F871E38A26300FA7A5E /* PluralCategory.swift */,
 				7A242F881E38A26300FA7A5E /* SpecificModule.swift */,
 			);
@@ -242,7 +239,6 @@
 				7A242F9C1E38ADBB00FA7A5E /* SpanishParlance.swift in Sources */,
 				7A242F911E38A3F900FA7A5E /* SignInParlance.swift in Sources */,
 				7A242F7A1E388B5A00FA7A5E /* SignInViewController.swift in Sources */,
-				7A242F8B1E38A26300FA7A5E /* Parlance.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

@@ -17,14 +17,14 @@ class WelcomeViewController: UIViewController {
     @IBOutlet weak var signInButton: UIButton! {
         didSet {
             signInButton.layer.cornerRadius = 5
-            let title = Parlance.t(WelcomeParlance.self, .signInButtonText)
+            let title = WelcomeParlance.t(.signInButtonText)
             signInButton.setTitle(title, for: .normal)
         }
     }
     @IBOutlet weak var signOutButton: UIButton! {
         didSet {
             signOutButton.layer.cornerRadius = 5
-            let title = Parlance.t(WelcomeParlance.self, .signOutButtonText)
+            let title = WelcomeParlance.t(.signOutButtonText)
             signOutButton.setTitle(title, for: .normal)
         }
     }
@@ -57,9 +57,9 @@ class WelcomeViewController: UIViewController {
     
     func welcomeLabelText() -> String {
         if let user = User.currentUser {
-            return Parlance.t(WelcomeParlance.self, .welcomeMessage(name: user.name))
+            return WelcomeParlance.t(.welcomeMessage(name: user.name))
         }
         
-        return Parlance.t(WelcomeParlance.self, .genericWelcomeMessage)
+        return WelcomeParlance.t(.genericWelcomeMessage)
     }
 }
