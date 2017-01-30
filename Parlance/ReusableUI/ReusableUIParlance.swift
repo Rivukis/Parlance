@@ -11,8 +11,8 @@ enum ReusableUIParlanceKey {
     case alertAcceptanceText
 }
 
-final class ReusableUIParlance: BaseModule {
-    typealias _LocaleCoordinator = LocaleCoordinator
+final class ReusableUIParlance: BaseParlance {
+    typealias _ParlanceCoordinator = ParlanceCoordinator
     static let shared = ReusableUIParlance()
     
     func t(_ key: ReusableUIParlanceKey) -> String {

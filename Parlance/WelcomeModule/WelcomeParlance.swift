@@ -13,8 +13,8 @@ enum WelcomeParlanceKey {
     case welcomeMessage(name: String)
 }
 
-final class WelcomeParlance: BaseModule {
-    typealias _LocaleCoordinator = LocaleCoordinator
+final class WelcomeParlance: BaseParlance {
+    typealias _ParlanceCoordinator = ParlanceCoordinator
     static let shared = WelcomeParlance()
     
     func t(_ key: WelcomeParlanceKey) -> String {

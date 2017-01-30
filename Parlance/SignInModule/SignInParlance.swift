@@ -13,8 +13,8 @@ enum SignInParlanceKey {
     case cancelButtonText
 }
 
-final class SignInParlance: BaseModule {
-    typealias _LocaleCoordinator = LocaleCoordinator
+final class SignInParlance: BaseParlance {
+    typealias _ParlanceCoordinator = ParlanceCoordinator
     static let shared = SignInParlance()
     
     func t(_ key: SignInParlanceKey) -> String {
