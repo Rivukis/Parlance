@@ -15,7 +15,7 @@ import Foundation
  */
 public protocol ParlanceCoordinatable {
     /**
-     Must provide a shared instance.
+     The shared instance.
      
      ## Example Conformance ##
      ````
@@ -25,10 +25,21 @@ public protocol ParlanceCoordinatable {
     static var shared: Self { get }
     
     /**
-     Must provide the `Language` to use for a given `Locale`.
+     The `Language` to use for a given `Locale`.
      
      - Important: Do NOT call this method. Only implement it.
      - SeeAlso: var `currentLanguage` in ParlanceCoordinatable extension
+     
+     ## Example ##
+     ````
+     func currentLanguage(for locale: Locale) -> Language {
+         if locale.languageCode == "es" {
+             return .spanish
+         }
+     
+         return .english
+     }
+     ````
      
      - Parameter locale: The current `Locale` given by the system.
      - Returns: The Language that Parlance will use.
@@ -36,7 +47,33 @@ public protocol ParlanceCoordinatable {
     func currentLanguage(for locale: Locale) -> Language
     
     /**
-     Must provide the `PluralCategory` to use for a given `Int` and `Language`.
+     The `PluralCategory` to use for a given `Int` and `Language`.
+     
+     - Important: Do NOT call this method. Only implement it.
+     - SeeAlso: var `category(for:)` in SpecificParlance extension
+     
+     ## Example ##
+     ````
+     func category(for int: Int, language: Language) -> PluralCategory {
+         switch language {
+         case .english:
+             if int == 1 {
+                 return .one
+             } else {
+                 return .other
+             }
+     
+         case .colognian:
+             if int == 0 {
+                 return .zero
+             } else if int == 1 {
+                 return .one
+             } else {
+                 return .other
+             }
+         }
+     }
+     ````
      
      - Parameter int: The `Int` used to determine the `PluralCategory`.
      - Parameter language: The `Language` used to determine the `PluralCategory`.
@@ -47,10 +84,28 @@ public protocol ParlanceCoordinatable {
     // Can be infered from instance function `category(for:language:)`
     
     /**
-     Must specify the type to be used as the Language.
+     The `Language` associated type.
      
      - Important: Best if Language is an enum.
      - Note: Can be inferred by specifying the type in the function `category(for:language:)`
+     
+     ## Example ##
+     ````
+     enum SupportedLanguage {
+         case english
+         caes spanish
+     }
+     
+     // Specifying the type directly.
+     typealias Language = SupportedLanguage
+     
+     // OR
+     
+     // Specifying the type using type-inferrence.
+     func category(for: Int, language: SupportedLanguage) {
+         // ...
+     }
+     ````
      */
     associatedtype Language
 }
