@@ -17,10 +17,10 @@ public protocol ParlanceCoordinatable {
     /**
      The shared instance.
      
-     ## Example Conformance ##
-     ````
+     ## Example ##
+     ```
      static let shared = ParlanceCoordinator()
-     ````
+     ```
      */
     static var shared: Self { get }
     
@@ -31,7 +31,7 @@ public protocol ParlanceCoordinatable {
      - SeeAlso: var `currentLanguage` in ParlanceCoordinatable extension
      
      ## Example ##
-     ````
+     ```
      func currentLanguage(for locale: Locale) -> Language {
          if locale.languageCode == "es" {
              return .spanish
@@ -39,7 +39,7 @@ public protocol ParlanceCoordinatable {
      
          return .english
      }
-     ````
+     ```
      
      - Parameter locale: The current `Locale` given by the system.
      - Returns: The Language that Parlance will use.
@@ -53,7 +53,7 @@ public protocol ParlanceCoordinatable {
      - SeeAlso: var `category(for:)` in SpecificParlance extension
      
      ## Example ##
-     ````
+     ```
      func category(for int: Int, language: Language) -> PluralCategory {
          switch language {
          case .english:
@@ -73,15 +73,13 @@ public protocol ParlanceCoordinatable {
              }
          }
      }
-     ````
+     ```
      
      - Parameter int: The `Int` used to determine the `PluralCategory`.
      - Parameter language: The `Language` used to determine the `PluralCategory`.
      - Returns: the `PluralCategory` for the given `Int` and `Language`.
      */
     func category(for int: Int, language: Language) -> PluralCategory
-    
-    // Can be infered from instance function `category(for:language:)`
     
     /**
      The `Language` associated type.
@@ -90,7 +88,7 @@ public protocol ParlanceCoordinatable {
      - Note: Can be inferred by specifying the type in the function `category(for:language:)`
      
      ## Example ##
-     ````
+     ```
      enum SupportedLanguage {
          case english
          caes spanish
@@ -105,7 +103,7 @@ public protocol ParlanceCoordinatable {
      func category(for: Int, language: SupportedLanguage) {
          // ...
      }
-     ````
+     ```
      */
     associatedtype Language
 }
