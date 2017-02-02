@@ -9,7 +9,7 @@
 import Foundation
 
 /**
- Types conforming to this protocol provide the type to use for `Language`, the current language, and the plural category for a specific scenario.
+ Types conforming to this protocol provide the type to use for `Language`, the current `Language`, and the plural category for a specific scenario.
  
  - Note: Only one type conforming to ParlanceCoordinatable is necessary per project.
  */
@@ -17,7 +17,7 @@ public protocol ParlanceCoordinatable {
     /**
      The shared instance.
      
-     ## Example ##
+     ## Example Usage ##
      ```
      static let shared = ParlanceCoordinator()
      ```
@@ -30,7 +30,7 @@ public protocol ParlanceCoordinatable {
      - Important: Do NOT call this method. Only implement it.
      - SeeAlso: var `currentLanguage` in ParlanceCoordinatable extension
      
-     ## Example ##
+     ## Example Usage ##
      ```
      func currentLanguage(for locale: Locale) -> Language {
          if locale.languageCode == "es" {
@@ -52,7 +52,7 @@ public protocol ParlanceCoordinatable {
      - Important: Do NOT call this method. Only implement it.
      - SeeAlso: var `category(for:)` in SpecificParlance extension
      
-     ## Example ##
+     ## Example Usage ##
      ```
      func category(for int: Int, language: Language) -> PluralCategory {
          switch language {
@@ -82,12 +82,12 @@ public protocol ParlanceCoordinatable {
     func category(for int: Int, language: Language) -> PluralCategory
     
     /**
-     The `Language` associated type.
+     The associated type `Language`.
      
      - Important: Best if Language is an enum.
      - Note: Can be inferred by specifying the type in the function `category(for:language:)`
      
-     ## Example ##
+     ## Example Usage ##
      ```
      enum SupportedLanguage {
          case english
@@ -110,7 +110,7 @@ public protocol ParlanceCoordinatable {
 
 public extension ParlanceCoordinatable {
     /**
-     The current language from currentLanguage(for:).
+     The current `Language` from currentLanguage(for:).
      */
     var currentLanguage: Language {
         return currentLanguage(for: Locale.current)

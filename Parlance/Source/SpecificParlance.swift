@@ -11,6 +11,8 @@
  Curry -> category(for:using:) to be just category(for:)
  */
 
+// TODO: add docs
+
 public protocol SpecificParlance {
     associatedtype _ParlanceCoordinator: ParlanceCoordinatable
     associatedtype PluralCategory: RawRepresentable // ONLY include values from 'PluralCategory' && RawValue == String
