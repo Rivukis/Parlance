@@ -17,16 +17,10 @@ public protocol SpecificParlance {
     associatedtype _ParlanceCoordinator: ParlanceCoordinatable
     associatedtype PluralCategory: RawRepresentable // ONLY include values from 'PluralCategory' && RawValue == String
     static var shared: Self { get }
-    func t(_ key: Key) -> String
+    static func t(_ key: Key) -> String
     
     // Can be infered from instance function `t()`
     associatedtype Key
-}
-
-public extension SpecificParlance {
-    static func t(_ key: Key) -> String {
-        return Self.shared.t(key)
-    }
 }
 
 public extension SpecificParlance where PluralCategory.RawValue == String {

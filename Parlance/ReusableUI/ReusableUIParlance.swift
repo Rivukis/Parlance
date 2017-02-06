@@ -18,9 +18,9 @@ final class ReusableUIParlance: BaseParlance {
     func t(_ key: ReusableUIParlanceKey) -> String {
         switch currentLanguage {
         case .english:
-            return ReusableUIParlance_en.shared.t(key)
+            return ReusableUIParlance_en.t(key)
         case .spanish:
-            return ReusableUIParlance_es.shared.t(key)
+            return ReusableUIParlance_es.t(key)
         }
     }
 }

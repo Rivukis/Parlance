@@ -16,7 +16,7 @@ final class SignInParlance_es: SpecificParlance {
     typealias PluralCategory = SpanishPluralCategory
     static let shared = SignInParlance_es()
     
-    func t(_ key: SignInParlanceKey) -> String {
+    static func t(_ key: SignInParlanceKey) -> String {
         switch key {
         case .namePlaceholder:
             return "ingrese su nombre"
@@ -35,7 +35,7 @@ final class WelcomeParlance_es: SpecificParlance {
     typealias PluralCategory = SpanishPluralCategory
     static let shared = WelcomeParlance_es()
     
-    func t(_ key: WelcomeParlanceKey) -> String {
+    static func t(_ key: WelcomeParlanceKey) -> String {
         switch key {
         case .signInButtonText:
             return "registrarse"
@@ -54,7 +54,7 @@ final class ReusableUIParlance_es: SpecificParlance {
     typealias PluralCategory = SpanishPluralCategory
     static let shared = ReusableUIParlance_es()
     
-    func t(_ key: ReusableUIParlanceKey) -> String {
+    static func t(_ key: ReusableUIParlanceKey) -> String {
         switch key {
         case .alertAcceptanceText:
             return "Vale"

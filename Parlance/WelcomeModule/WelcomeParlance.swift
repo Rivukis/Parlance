@@ -20,9 +20,9 @@ final class WelcomeParlance: BaseParlance {
     func t(_ key: WelcomeParlanceKey) -> String {
         switch currentLanguage {
         case .english:
-            return WelcomeParlance_en.shared.t(key)
+            return WelcomeParlance_en.t(key)
         case .spanish:
-            return WelcomeParlance_es.shared.t(key)
+            return WelcomeParlance_es.t(key)
         }
     }
 }
