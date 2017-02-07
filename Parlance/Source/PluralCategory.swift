@@ -10,8 +10,8 @@
  These are the categories of pluralization that a language might have.
  
  - Note: Not all languages use all six categories.
- - Note: For information on plural categories, see [Plural Rules](http://cldr.unicode.org/index/cldr-spec/plural-rules)
- - Note: For information on a specific language's plural rules, see [Plural Rules per Language](http://www.unicode.org/cldr/charts/latest/supplemental/language_plural_rules.html) (Type: *Cardinal*)
+ - Note: For information on plural categories, see [Plural Rules](http://cldr.unicode.org/index/cldr-spec/plural-rules).
+ - Note: For information on a specific language's plural rules, see [Plural Rules per Language](http://www.unicode.org/cldr/charts/latest/supplemental/language_plural_rules.html) (Use *Cardinal* type).
  */
 public enum PluralCategory: String {
     case zero

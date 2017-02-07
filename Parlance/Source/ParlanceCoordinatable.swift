@@ -17,7 +17,7 @@ public protocol ParlanceCoordinatable {
     /**
      The shared instance.
      
-     ## Example Usage ##
+     ## Example Implementation ##
      ```
      static let shared = ParlanceCoordinator()
      ```
@@ -27,10 +27,9 @@ public protocol ParlanceCoordinatable {
     /**
      The `Language` to use for a given `Locale`.
      
-     - Important: Do NOT call this method. Only implement it.
-     - SeeAlso: var `currentLanguage` in ParlanceCoordinatable extension
+     - Important: Do NOT call this method, only implement it. To get the current `Language` use the variable `currentLanguage` instead.
      
-     ## Example Usage ##
+     ## Example Implementation ##
      ```
      func currentLanguage(for locale: Locale) -> Language {
          if locale.languageCode == "es" {
@@ -41,7 +40,7 @@ public protocol ParlanceCoordinatable {
      }
      ```
      
-     - Parameter locale: The current `Locale` given by the system.
+     - Parameter locale: The current `Locale` returned by the system.
      - Returns: The Language that Parlance will use.
      */
     func currentLanguage(for locale: Locale) -> Language
@@ -52,7 +51,7 @@ public protocol ParlanceCoordinatable {
      - Important: Do NOT call this method. Only implement it.
      - SeeAlso: var `category(for:)` in SpecificParlance extension
      
-     ## Example Usage ##
+     ## Example Implementation ##
      ```
      func category(for int: Int, language: Language) -> PluralCategory {
          switch language {
@@ -87,20 +86,15 @@ public protocol ParlanceCoordinatable {
      - Important: Best if Language is an enum.
      - Note: Can be inferred by specifying the type in the function `category(for:language:)`
      
-     ## Example Usage ##
+     ## Example Implementation ##
      ```
-     enum SupportedLanguage {
+     enum Language {
          case english
-         caes spanish
+         case spanish
      }
      
-     // Specifying the type directly.
-     typealias Language = SupportedLanguage
-     
-     // OR
-     
-     // Specifying the type using type-inferrence.
-     func category(for: Int, language: SupportedLanguage) {
+     // Specifying the type using type-inference.
+     func category(for: Int, language: Language) {
          // ...
      }
      ```
@@ -110,7 +104,15 @@ public protocol ParlanceCoordinatable {
 
 public extension ParlanceCoordinatable {
     /**
-     The current `Language` from currentLanguage(for:).
+     The current `Language` for `Locale.current`.
+     
+     ## Example Usage ##
+     ```swift
+     switch currentLanguage {
+     case .english:
+         // ...
+     }
+     ```
      */
     var currentLanguage: Language {
         return currentLanguage(for: Locale.current)
@@ -119,7 +121,7 @@ public extension ParlanceCoordinatable {
     /**
      Get the `rawValue` of the PluralCategory for the given `Int` for the `currentLanguage`.
      
-     - Attention: FOR INTERNAL USE ONLY. DO NOT EXECUTE OR OVERRIDE.
+     - Important: FOR INTERNAL USE ONLY. DO NOT USE OR OVERRIDE.
      
      - Parameter int: The `Int` used to determine the `PluralCategory`.
      - Returns: the `rawValue` of the `PluralCategory` for the `currentLanguage`.

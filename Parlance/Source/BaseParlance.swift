@@ -7,13 +7,13 @@
 //
 
 /**
- Types conforming to `BaseParlance` are **used** to translate `Key` into a `String` appropriate for the current `Language`. The current `Language` is determined by '_ParlanceCoordinator'.
+ Types conforming to `BaseParlance` are **used** to translate `Key` into a `String` localized and/or pluralized for the current `Language`. The current `Language` is determined by '_ParlanceCoordinator'.
 
- The **purpose** of types conforming to `BaseParlance` is to trampoline calls to `t(key:)` to the corresponding `t(key:)` on the appropriate `SpecificParlance`. This `SpecificParlance` needs to use the same type for `Key` and be specific to the `Language` returned by `currentLanguage`.
+ The **purpose** of types conforming to `BaseParlance` is to trampoline calls to the `t(key:)` function to the corresponding `t(key:)` function on the appropriate `SpecificParlance`. This `SpecificParlance` needs to use the same type for `Key` and be specific to the `Language` returned by `currentLanguage`.
  
  - Note: Only one type conforming to `BaseParlance` per *module\/section*.
  
- ## Example Usage ##
+ ## Example Implementation ##
  ```swift
  final class SignInParlance: BaseParlance {
      typealias _ParlanceCoordinator = ParlanceCoordinator
@@ -34,12 +34,8 @@ public protocol BaseParlance {
     /**
      The associated type `_ParlanceCoordinator`. Must conform to `ParlanceCoordinatable`.
           
-     ## Example Usage ##
+     ## Example Implementation ##
      ```
-     class ParlanceCoordinator: ParlanceCoordinatable {
-         // ...
-     }
-     
      typealias _ParlanceCoordinator = ParlanceCoordinator
      ```
      */
@@ -48,7 +44,7 @@ public protocol BaseParlance {
     /**
      The shared instance.
      
-     ## Example Usage ##
+     ## Example Implementation ##
      ```
      static let shared = SignInParlance()
      ```
@@ -56,11 +52,13 @@ public protocol BaseParlance {
     static var shared: Self { get }
     
     /**
-     The function used to translate `Key` into a `String` appropriate for the current `Language`. The current `Language` is determined by '_ParlanceCoordinator'.
+     The instance function used to translate `Key` into a `String` localized and/or pluralized for the current `Language`. The current `Language` is determined by '_ParlanceCoordinator'.
      
      The **purpose** of `t(key:)` is to tampoline this call to the corresponding `t(key:)` on the appropriate `SpecificParlance`. This `SpecificParlance` needs to use the same type for `Key` and be specific to the `Language` returned by `currentLanguage`.
      
-     ## Example Usage ##
+     - Note: Can also use the static function `t(key:)`.
+     
+     ## Example Implementation ##
      ```swift
      func t(_ key: SignInParlanceKey) -> String {
          switch currentLanguage {
@@ -71,28 +69,25 @@ public protocol BaseParlance {
          }
      }
      ```
+     
+     - Parameter key: The `Key` to be localized and/or pluralized.
+     - Returns: The localized and/or pluralized `String`.
      */
     func t(_ key: Key) -> String
     
     /**
      The associated type `Key`.
      
-     - Important: Best if Key is an enum. Can leverage associated values for inputs to the translation.
-     - Note: Can be inferred by specifying the type in the function `t(key:)`
+     - Important: Best if `Key` is an enum. If `Key` is an enum then use associated values for dynamic inputs into the localization process.
+     - Note: Can be inferred by specifying the type in the instance function `t(key:)`
      
-     ## Example Usage ##
+     ## Example Implementation ##
      ```
      enum SignInParlanceKey {
-         case english
-         caes spanish
+         case welcomeMessage(name: String)
      }
      
-     // Specifying the type directly.
-     typealias Key = SignInParlanceKey
-     
-     // OR
-     
-     // Specifying the type using type-inferrence.
+     // Specifying the type using type-inference.
      func t(_ key: SignInParlanceKey) {
          // ...
      }
@@ -102,7 +97,20 @@ public protocol BaseParlance {
 }
 
 public extension BaseParlance {
-    // TODO: add docs
+    /**
+     The class function used to translate `Key` into a `String` localized and/or pluralized for the current `Language`. The current `Language` is determined by '_ParlanceCoordinator'.
+     
+     - Note: This static function is provided with no addition code required. The implementation calls the instance function `t(key:)` on static variable `shared`.
+     - Note: Can also use the instance function `t(key:)`.
+     
+     ## Example Usage ##
+     ```swift
+     SignInParlance.t(.welcomeMessage(name: userName))
+     ```
+     
+     - Parameter key: The `Key` to be localized and/or pluralized.
+     - Returns: The localized and/or pluralized `String`.
+     */
     static func t(_ key: Key) -> String {
         return Self.shared.t(key)
     }
