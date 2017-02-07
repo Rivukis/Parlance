@@ -23,7 +23,7 @@ public protocol SpecificParlance {
     associatedtype Key
 }
 
-public extension SpecificParlance where PluralCategory.RawValue == String {
+public extension SpecificParlance where _PluralCategory.RawValue == String {
     func category(for int: Int) -> PluralCategory {
         let rawValue = _ParlanceCoordinator.shared.rawCategory(for: int)
         guard let category = PluralCategory(rawValue: rawValue) else {

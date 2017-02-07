@@ -13,7 +13,7 @@ enum SpanishPluralCategory: String {
 
 final class SignInParlance_es: SpecificParlance {
     typealias _ParlanceCoordinator = ParlanceCoordinator
-    typealias PluralCategory = SpanishPluralCategory
+    typealias _PluralCategory = SpanishPluralCategory
     static let shared = SignInParlance_es()
     
     static func t(_ key: SignInParlanceKey) -> String {
@@ -32,7 +32,7 @@ final class SignInParlance_es: SpecificParlance {
 
 final class WelcomeParlance_es: SpecificParlance {
     typealias _ParlanceCoordinator = ParlanceCoordinator
-    typealias PluralCategory = SpanishPluralCategory
+    typealias _PluralCategory = SpanishPluralCategory
     static let shared = WelcomeParlance_es()
     
     static func t(_ key: WelcomeParlanceKey) -> String {
@@ -51,7 +51,7 @@ final class WelcomeParlance_es: SpecificParlance {
 
 final class ReusableUIParlance_es: SpecificParlance {
     typealias _ParlanceCoordinator = ParlanceCoordinator
-    typealias PluralCategory = SpanishPluralCategory
+    typealias _PluralCategory = SpanishPluralCategory
     static let shared = ReusableUIParlance_es()
     
     static func t(_ key: ReusableUIParlanceKey) -> String {
