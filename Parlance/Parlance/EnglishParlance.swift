@@ -14,7 +14,6 @@ enum EnglishPluralCategory: String {
 final class SignInParlance_en: SpecificParlance {
     typealias _ParlanceCoordinator = ParlanceCoordinator
     typealias _PluralCategory = EnglishPluralCategory
-    static let shared = SignInParlance_en()
     
     static func t(_ key: SignInParlanceKey) -> String {
         switch key {
@@ -33,7 +32,6 @@ final class SignInParlance_en: SpecificParlance {
 final class WelcomeParlance_en: SpecificParlance {
     typealias _ParlanceCoordinator = ParlanceCoordinator
     typealias _PluralCategory = EnglishPluralCategory
-    static let shared = WelcomeParlance_en()
     
     static func t(_ key: WelcomeParlanceKey) -> String {
         switch key {
@@ -52,7 +50,6 @@ final class WelcomeParlance_en: SpecificParlance {
 final class ReusableUIParlance_en: SpecificParlance {
     typealias _ParlanceCoordinator = ParlanceCoordinator
     typealias _PluralCategory = EnglishPluralCategory
-    static let shared = ReusableUIParlance_en()
     
     static func t(_ key: ReusableUIParlanceKey) -> String {
         switch key {

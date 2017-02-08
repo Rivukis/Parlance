@@ -65,16 +65,6 @@ public protocol SpecificParlance {
     associatedtype _PluralCategory: RawRepresentable
     
     /**
-     The shared instance.
-     
-     ## Example Implementation ##
-     ```
-     static let shared = SignInParlance()
-     ```
-     */
-    static var shared: Self { get }
-    
-    /**
      The function used to translate `Key` into a `String` localized and/or pluralized for a specific `Language`. The `Language` should be static for each type conforming to `SpecificParlance`.
      
      - Important: ONLY call this function from a `BaseParlance`.
