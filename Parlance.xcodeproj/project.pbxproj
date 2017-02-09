@@ -25,7 +25,19 @@
 		7A69D0D91E388825008C9C61 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 7A69D0D81E388825008C9C61 /* Assets.xcassets */; };
 		7A69D0DC1E388825008C9C61 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 7A69D0DA1E388825008C9C61 /* LaunchScreen.storyboard */; };
 		7A69D0E51E388917008C9C61 /* WelcomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7A69D0E41E388917008C9C61 /* WelcomeViewController.swift */; };
+		7A830D1E1E4C2EDD00358A23 /* ParlanceTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7A830D1D1E4C2EDD00358A23 /* ParlanceTests.swift */; };
+		7A830D261E4C2F1800358A23 /* ParlanceCoordinatableTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7A830D251E4C2F1800358A23 /* ParlanceCoordinatableTests.swift */; };
 /* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		7A830D201E4C2EDD00358A23 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 7A69D0C61E388824008C9C61 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 7A69D0CD1E388824008C9C61;
+			remoteInfo = Parlance;
+		};
+/* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
 		7A242F791E388B5A00FA7A5E /* SignInViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = SignInViewController.swift; path = SignInModule/SignInViewController.swift; sourceTree = "<group>"; };
@@ -48,10 +60,21 @@
 		7A69D0DB1E388825008C9C61 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		7A69D0DD1E388825008C9C61 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		7A69D0E41E388917008C9C61 /* WelcomeViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = WelcomeViewController.swift; path = WelcomeModule/WelcomeViewController.swift; sourceTree = "<group>"; };
+		7A830D1B1E4C2EDD00358A23 /* ParlanceTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = ParlanceTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		7A830D1D1E4C2EDD00358A23 /* ParlanceTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ParlanceTests.swift; sourceTree = "<group>"; };
+		7A830D1F1E4C2EDD00358A23 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		7A830D251E4C2F1800358A23 /* ParlanceCoordinatableTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ParlanceCoordinatableTests.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
 		7A69D0CB1E388824008C9C61 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		7A830D181E4C2EDD00358A23 /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -113,6 +136,7 @@
 			isa = PBXGroup;
 			children = (
 				7A69D0D01E388824008C9C61 /* Parlance */,
+				7A830D1C1E4C2EDD00358A23 /* ParlanceTests */,
 				7A69D0CF1E388824008C9C61 /* Products */,
 			);
 			sourceTree = "<group>";
@@ -121,6 +145,7 @@
 			isa = PBXGroup;
 			children = (
 				7A69D0CE1E388824008C9C61 /* Parlance.app */,
+				7A830D1B1E4C2EDD00358A23 /* ParlanceTests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -151,6 +176,16 @@
 			name = Other;
 			sourceTree = "<group>";
 		};
+		7A830D1C1E4C2EDD00358A23 /* ParlanceTests */ = {
+			isa = PBXGroup;
+			children = (
+				7A830D251E4C2F1800358A23 /* ParlanceCoordinatableTests.swift */,
+				7A830D1D1E4C2EDD00358A23 /* ParlanceTests.swift */,
+				7A830D1F1E4C2EDD00358A23 /* Info.plist */,
+			);
+			path = ParlanceTests;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -171,6 +206,24 @@
 			productReference = 7A69D0CE1E388824008C9C61 /* Parlance.app */;
 			productType = "com.apple.product-type.application";
 		};
+		7A830D1A1E4C2EDD00358A23 /* ParlanceTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 7A830D241E4C2EDD00358A23 /* Build configuration list for PBXNativeTarget "ParlanceTests" */;
+			buildPhases = (
+				7A830D171E4C2EDD00358A23 /* Sources */,
+				7A830D181E4C2EDD00358A23 /* Frameworks */,
+				7A830D191E4C2EDD00358A23 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				7A830D211E4C2EDD00358A23 /* PBXTargetDependency */,
+			);
+			name = ParlanceTests;
+			productName = ParlanceTests;
+			productReference = 7A830D1B1E4C2EDD00358A23 /* ParlanceTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
 /* End PBXNativeTarget section */
 
 /* Begin PBXProject section */
@@ -185,6 +238,12 @@
 						CreatedOnToolsVersion = 8.2.1;
 						DevelopmentTeam = XQJAY5KMS4;
 						ProvisioningStyle = Automatic;
+					};
+					7A830D1A1E4C2EDD00358A23 = {
+						CreatedOnToolsVersion = 8.2.1;
+						DevelopmentTeam = XQJAY5KMS4;
+						ProvisioningStyle = Automatic;
+						TestTargetID = 7A69D0CD1E388824008C9C61;
 					};
 				};
 			};
@@ -202,6 +261,7 @@
 			projectRoot = "";
 			targets = (
 				7A69D0CD1E388824008C9C61 /* Parlance */,
+				7A830D1A1E4C2EDD00358A23 /* ParlanceTests */,
 			);
 		};
 /* End PBXProject section */
@@ -214,6 +274,13 @@
 				7A69D0DC1E388825008C9C61 /* LaunchScreen.storyboard in Resources */,
 				7A69D0D91E388825008C9C61 /* Assets.xcassets in Resources */,
 				7A69D0D71E388825008C9C61 /* Main.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		7A830D191E4C2EDD00358A23 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -242,7 +309,24 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		7A830D171E4C2EDD00358A23 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				7A830D261E4C2F1800358A23 /* ParlanceCoordinatableTests.swift in Sources */,
+				7A830D1E1E4C2EDD00358A23 /* ParlanceTests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		7A830D211E4C2EDD00358A23 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 7A69D0CD1E388824008C9C61 /* Parlance */;
+			targetProxy = 7A830D201E4C2EDD00358A23 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
 
 /* Begin PBXVariantGroup section */
 		7A69D0D51E388825008C9C61 /* Main.storyboard */ = {
@@ -383,6 +467,34 @@
 			};
 			name = Release;
 		};
+		7A830D221E4C2EDD00358A23 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				DEVELOPMENT_TEAM = XQJAY5KMS4;
+				INFOPLIST_FILE = ParlanceTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = RIV.ParlanceTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 3.0;
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Parlance.app/Parlance";
+			};
+			name = Debug;
+		};
+		7A830D231E4C2EDD00358A23 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				DEVELOPMENT_TEAM = XQJAY5KMS4;
+				INFOPLIST_FILE = ParlanceTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = RIV.ParlanceTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 3.0;
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Parlance.app/Parlance";
+			};
+			name = Release;
+		};
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
@@ -403,6 +515,14 @@
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
+		};
+		7A830D241E4C2EDD00358A23 /* Build configuration list for PBXNativeTarget "ParlanceTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				7A830D221E4C2EDD00358A23 /* Debug */,
+				7A830D231E4C2EDD00358A23 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
 		};
 /* End XCConfigurationList section */
 	};
