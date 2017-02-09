@@ -106,10 +106,18 @@ public protocol SpecificParlance {
 }
 
 public extension SpecificParlance where _PluralCategory.RawValue == String {
-    func category(for int: Int) -> PluralCategory {
+    /**
+     Returns the `_PluralCategory` for the given `Int`.
+     
+     The plural category is determined by `_ParlanceCoordinator`'s `category(for:language:)`.
+     
+     - Parameter int: the `Int` to be evaluated.
+     - Returns: A `PluralCategory`, limited to the appropraite `Language`.
+     */
+    static func category(for int: Int) -> _PluralCategory {
         let rawValue = _ParlanceCoordinator.shared.rawCategory(for: int)
-        guard let category = PluralCategory(rawValue: rawValue) else {
-            fatalError("\(type(of: PluralCategory.self)) does not have member \"\(rawValue)\".")
+        guard let category = _PluralCategory(rawValue: rawValue) else {
+            fatalError("\(type(of: _PluralCategory.self)) does not have member \"\(rawValue)\".")
         }
         
         return category

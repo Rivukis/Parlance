@@ -14,6 +14,11 @@ class WelcomeViewController: UIViewController {
             welcomeLabel.text = welcomeLabelText()
         }
     }
+    @IBOutlet weak var sessionCountLabel: UILabel! {
+        didSet {
+            sessionCountLabel.text = WelcomeParlance.t(.sessionsCount(sessionsCount))
+        }
+    }
     @IBOutlet weak var signInButton: UIButton! {
         didSet {
             signInButton.layer.cornerRadius = 5
@@ -29,6 +34,7 @@ class WelcomeViewController: UIViewController {
         }
     }
     
+    var sessionsCount = 0
     let alertControllerBuilder = AlertControllerBuilder(parlance: ReusableUIParlance.shared)
     
     // MARK: Lifecycle
@@ -38,11 +44,18 @@ class WelcomeViewController: UIViewController {
         refresh()
     }
     
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if let signInViewController = segue.destination as? SignInViewController {
+            signInViewController.delegate = self
+        }
+    }
+    
     // MARK: Actions
     
     @IBAction func signOutTapped(_ sender: Any) {
         if let _ = User.currentUser {
             User.currentUser = nil
+            sessionsCount = 0
             let signedOutAlertController = alertControllerBuilder.alertController(withType: .signedOut)
             present(signedOutAlertController, animated: true)
             refresh()
@@ -53,6 +66,7 @@ class WelcomeViewController: UIViewController {
     
     func refresh() {
         welcomeLabel.text = welcomeLabelText()
+        sessionCountLabel.text = WelcomeParlance.t(.sessionsCount(sessionsCount))
     }
     
     func welcomeLabelText() -> String {
@@ -61,5 +75,11 @@ class WelcomeViewController: UIViewController {
         }
         
         return WelcomeParlance.t(.genericWelcomeMessage)
+    }
+}
+
+extension WelcomeViewController: SignInViewControllerDelegate {
+    func didSignIn() {
+        sessionsCount += 1
     }
 }

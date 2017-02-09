@@ -43,6 +43,13 @@ final class WelcomeParlance_en: SpecificParlance {
             return "Welcome!"
         case .welcomeMessage(name: let name):
             return "Welcome, \(name)!"
+        case .sessionsCount(let count):
+            switch category(for: count) {
+            case .one:
+                return "1 session"
+            case .other:
+                return "\(count) sessions"
+            }
         }
     }
 }

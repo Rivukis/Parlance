@@ -48,6 +48,12 @@
                                     <action selector="signOutTapped:" destination="BYZ-38-t0r" eventType="touchUpInside" id="onj-Zw-JJl"/>
                                 </connections>
                             </button>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="session count" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="bEF-nR-xDU">
+                                <rect key="frame" x="134.5" y="388.5" width="106" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
@@ -55,6 +61,8 @@
                             <constraint firstItem="XZ6-HF-bZq" firstAttribute="centerY" secondItem="wfy-db-euE" secondAttribute="top" multiplier="0.3333" id="D0D-Fj-cqP"/>
                             <constraint firstItem="Wfb-aN-GMR" firstAttribute="centerX" secondItem="9ZU-uP-hE2" secondAttribute="centerX" id="DYl-GG-sSI"/>
                             <constraint firstItem="Wfb-aN-GMR" firstAttribute="top" secondItem="9ZU-uP-hE2" secondAttribute="bottom" constant="20" id="EnJ-wu-Wv3"/>
+                            <constraint firstItem="bEF-nR-xDU" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="OeP-ad-92j"/>
+                            <constraint firstItem="9ZU-uP-hE2" firstAttribute="top" secondItem="bEF-nR-xDU" secondAttribute="bottom" constant="20" id="QSm-Kt-ShD"/>
                             <constraint firstItem="9ZU-uP-hE2" firstAttribute="width" secondItem="8bC-Xf-vdC" secondAttribute="width" multiplier="0.75" id="WzG-Rd-Al8"/>
                             <constraint firstItem="9ZU-uP-hE2" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="XFc-xe-u1H"/>
                             <constraint firstItem="XZ6-HF-bZq" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="gRS-ur-fg6"/>
@@ -62,6 +70,7 @@
                         </constraints>
                     </view>
                     <connections>
+                        <outlet property="sessionCountLabel" destination="bEF-nR-xDU" id="LQZ-OT-eHH"/>
                         <outlet property="signInButton" destination="9ZU-uP-hE2" id="OOG-5w-8Wy"/>
                         <outlet property="signOutButton" destination="Wfb-aN-GMR" id="xLN-OA-IUf"/>
                         <outlet property="welcomeLabel" destination="XZ6-HF-bZq" id="NES-KB-r5V"/>
@@ -140,7 +149,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="1Jb-NL-z6h" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="895" y="38"/>
+            <point key="canvasLocation" x="894" y="139"/>
         </scene>
     </scenes>
 </document>

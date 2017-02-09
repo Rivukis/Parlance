@@ -11,6 +11,7 @@ enum WelcomeParlanceKey {
     case signOutButtonText
     case genericWelcomeMessage
     case welcomeMessage(name: String)
+    case sessionsCount(Int)
 }
 
 final class WelcomeParlance: BaseParlance {

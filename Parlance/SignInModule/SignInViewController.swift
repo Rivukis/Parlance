@@ -8,6 +8,10 @@
 
 import UIKit
 
+protocol SignInViewControllerDelegate: class {
+    func didSignIn()
+}
+
 class SignInViewController: UIViewController {
     @IBOutlet weak var nameTextField: UITextField! {
         didSet {
@@ -34,6 +38,8 @@ class SignInViewController: UIViewController {
         }
     }
     
+    weak var delegate: SignInViewControllerDelegate?
+    
     // MARK: Lifecycle
     
     override func viewDidAppear(_ animated: Bool) {
@@ -51,6 +57,7 @@ class SignInViewController: UIViewController {
         
         if !name.isEmpty && password == "password" {
             User.currentUser = User(name: name)
+            delegate?.didSignIn()
             
             dismiss()
         }
