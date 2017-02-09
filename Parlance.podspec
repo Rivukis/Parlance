@@ -1,6 +1,6 @@
 Pod::Spec.new do |s|
   s.name             = 'Parlance'
-  s.version          = '1.1'
+  s.version          = '1.1.1'
   s.summary          = 'Convenient, scalable, type-safe localization for Swift iOS projects.'
 
   s.description      = <<-DESC
