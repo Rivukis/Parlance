@@ -1,8 +1,5 @@
-TODO: Update me!!
-
 # Parlance
 
-[![CI Status](http://img.shields.io/travis/Brian Radebaugh/Parlance.svg?style=flat)](https://travis-ci.org/Brian Radebaugh/Parlance)
 [![Version](https://img.shields.io/cocoapods/v/Parlance.svg?style=flat)](http://cocoapods.org/pods/Parlance)
 [![License](https://img.shields.io/cocoapods/l/Parlance.svg?style=flat)](http://cocoapods.org/pods/Parlance)
 [![Platform](https://img.shields.io/cocoapods/p/Parlance.svg?style=flat)](http://cocoapods.org/pods/Parlance)
@@ -30,8 +27,8 @@ enum Language {
     case irish
 }
 
-final class LocaleCoordinator: LocaleCoordinatable {
-    static let shared = LocaleCoordinator()
+final class ParlanceCoordinator: ParlanceCoordinatable {
+    static let shared = ParlanceCoordinator()
     
     // Language to use for the given Locale
     func currentLanguage(for locale: Locale) -> Language {
@@ -66,11 +63,9 @@ final class LocaleCoordinator: LocaleCoordinatable {
 ## Creating a Base Module
 
 * List out the keys for each localized string
-* Make a `final` class that conforms to `BaseModule`
-* Provide a `shared` instance
-* Get the shared instance of the class conforming to LocaleCoordinatable
-* Get the shared instance of all classes conforming `SpecificModule` for each language for this module
-* Trampoline each call to `t()` to the corressponding Specific Module's `t()` for the current language
+* Make a class that conforms to `BaseModule`
+* Specify the type to use for _ParlanceCoordinatable
+* Trampoline each call to `t()` to the corressponding language specific `SpecificParlance`'s static function, `t()`
 
 ### Example
 
@@ -80,16 +75,13 @@ enum LogInParlanceKey {
     case guestWelcomeMessage
 }
 
-final class LogInParlance: BaseModule {
-    static let shared = LogInParlance()
-    let localeCoordinator = LocaleCoordinator.shared
-    let en = LoginParlance_EN.shared
-    let ga = LoginParlance_GA.shared
+class LogInParlance: BaseParlance {
+    typealias _ParlanceCoordinator = ParlanceCoordinator
     
     func t(_ key: LogInParlanceKey) -> String {
-        switch localeCoordinator.currentLanguage {
-        case .english: return en.t(key)
-        case .irish: return ga.t(key)
+        switch currentLanguage {
+        case .english: return LogInParlance_en.t(key)
+        case .irish: return LogInParlance_ga.t(key)
         }
     }
 }
@@ -98,14 +90,11 @@ enum ShoppingCartParlanceKey {
     case numberOfItems(Int)
 }
 
-final class ShoppingCartParlance: BaseModule {
-    static let shared = ShoppingCartParlance()
-    let localeCoordinator = LocaleCoordinator.shared
-    let en = ShoppingCartParlance_EN.shared
-    let ga = ShoppingCartParlance_GA.shared
+class ShoppingCartParlance: BaseParlance {
+    typealias _ParlanceCoordinator = ParlanceCoordinator
     
     func t(_ key: ShoppingCartParlanceKey) -> String {
-        switch localeCoordinator.currentLanguage {
+        switch currentLanguage {
         case .english: return en.t(key)
         case .irish: return ga.t(key)
         }
@@ -116,8 +105,9 @@ final class ShoppingCartParlance: BaseModule {
 ## Creating a Specific Module
 
 * List out the plural categories for the language (once per language)
-* Make a `final` class that conforms to `SpecificModule`
-* Provide a `shared` instance
+* Make a class that conforms to `SpecificModule`
+* Specify the type to use for _ParlanceCoordinatable
+* Specify the type to use for _PluralCategory
 * Provide the correct translation for the given key
 ** use `category(for:)` to get the plural category for any `Int`s
 
@@ -129,26 +119,23 @@ enum EnglishPluralCategory: String {
     case other
 }
 
-final class LoginParlance_EN: SpecificModule {
+class LoginParlance_EN: SpecificModule {
+    typealias _ParlanceCoordinator = ParlanceCoordinator
     typealias PluralCategory = EnglishPluralCategory
-    static let shared = LoginParlance_EN()
 
-    func t(_ key: LogInParlanceKey) -> String {
+    static func t(_ key: LogInParlanceKey) -> String {
         switch key {
-        case .signedInWelcomeMessage(name: let name):
-            return "Welcome, " + name
-
-        case .guestWelcomeMessage:
-            return "Welcome"
+        case .signedInWelcomeMessage(name: let name): return "Welcome, " + name
+        case .guestWelcomeMessage: return "Welcome"
         }
     }
 }
 
-final class ShoppingCartParlance_EN: SpecificModule {
+class ShoppingCartParlance_EN: SpecificModule {
+    typealias _ParlanceCoordinator = ParlanceCoordinator
     typealias PluralCategory = EnglishPluralCategory
-    static let shared = ShoppingCartParlance_EN()
 
-    func t(_ key: ShoppingCartParlanceKey) -> String {
+    static func t(_ key: ShoppingCartParlanceKey) -> String {
         switch key {
         case .numberOfItems(let count):
             switch category(for: count) {
