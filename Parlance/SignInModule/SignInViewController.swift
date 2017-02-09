@@ -13,32 +13,33 @@ protocol SignInViewControllerDelegate: class {
 }
 
 class SignInViewController: UIViewController {
+    let parlance = SignInParlance()
+    weak var delegate: SignInViewControllerDelegate?
+    
     @IBOutlet weak var nameTextField: UITextField! {
         didSet {
             nameTextField.delegate = self
-            nameTextField.placeholder = SignInParlance.t(.namePlaceholder)
+            nameTextField.placeholder = parlance.t(.namePlaceholder)
         }
     }
     @IBOutlet weak var passwordTextField: UITextField! {
         didSet {
             passwordTextField.delegate = self
-            passwordTextField.placeholder = SignInParlance.t(.passwordPlaceholder)
+            passwordTextField.placeholder = parlance.t(.passwordPlaceholder)
         }
     }
     @IBOutlet weak var signInButton: UIButton! {
         didSet {
             signInButton.layer.cornerRadius = 5
-            signInButton.setTitle(SignInParlance.t(.signInButtonText), for: .normal)
+            signInButton.setTitle(parlance.t(.signInButtonText), for: .normal)
         }
     }
     @IBOutlet weak var cancelButton: UIButton! {
         didSet {
             cancelButton.layer.cornerRadius = 5
-            cancelButton.setTitle(SignInParlance.t(.cancelButtonText), for: .normal)
+            cancelButton.setTitle(parlance.t(.cancelButtonText), for: .normal)
         }
     }
-    
-    weak var delegate: SignInViewControllerDelegate?
     
     // MARK: Lifecycle
     

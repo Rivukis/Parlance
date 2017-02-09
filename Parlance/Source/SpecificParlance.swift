@@ -7,18 +7,15 @@
 //
 
 /**
- Types conforming to `BaseParlance` are **used** to translate `Key` into a `String` localized and/or pluralized for the current `Language`. The current `Language` is determined by '_ParlanceCoordinator'.
+ Types conforming to `SpecificParlance` are **used** to translate `Key` into a `String` localized and/or pluralized for a specific `Language`.
  
- The **purpose** of types conforming to `BaseParlance` is to trampoline calls to the `t(key:)` function to the corresponding `t(key:)` function on the appropriate `SpecificParlance`. This `SpecificParlance` needs to use the same type for `Key` and be specific to the `Language` returned by `currentLanguage`.
- 
- - Note: Only one type conforming to `BaseParlance` per *module\/section*.
+ - Note: Types conforming to `SpecificParlance` should ONLY be used by types conforming to `BaseParlance.`
  
  ## Example Implementation ##
  ```swift
  final class SignInParlance_en: SpecificParlance {
      typealias _ParlanceCoordinator = ParlanceCoordinator
      typealias PluralCategory = EnglishPluralCategory
-     static let shared = SignInParlance_en()
  
      static func t(_ key: SignInParlanceKey) -> String {
          switch key {
@@ -26,6 +23,13 @@
              return "enter name"
          case .welcomeMessage(let name):
              return "Welcome, \(name)!"
+         case .retriesLeft(let count):
+             switch category(for: count) {
+             case .one:
+                 return "1 retry left"
+             case .other:
+                 return "\(count) retries left"
+             }
          }
      }
  }

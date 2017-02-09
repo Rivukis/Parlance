@@ -9,6 +9,10 @@
 import UIKit
 
 class WelcomeViewController: UIViewController {
+    let parlance = WelcomeParlance()
+    var sessionsCount = 0
+    let alertControllerBuilder = AlertControllerBuilder(parlance: ReusableUIParlance())
+    
     @IBOutlet weak var welcomeLabel: UILabel! {
         didSet {
             welcomeLabel.text = welcomeLabelText()
@@ -16,26 +20,23 @@ class WelcomeViewController: UIViewController {
     }
     @IBOutlet weak var sessionCountLabel: UILabel! {
         didSet {
-            sessionCountLabel.text = WelcomeParlance.t(.sessionsCount(sessionsCount))
+            sessionCountLabel.text = parlance.t(.sessionsCount(sessionsCount))
         }
     }
     @IBOutlet weak var signInButton: UIButton! {
         didSet {
             signInButton.layer.cornerRadius = 5
-            let title = WelcomeParlance.t(.signInButtonText)
+            let title = parlance.t(.signInButtonText)
             signInButton.setTitle(title, for: .normal)
         }
     }
     @IBOutlet weak var signOutButton: UIButton! {
         didSet {
             signOutButton.layer.cornerRadius = 5
-            let title = WelcomeParlance.t(.signOutButtonText)
+            let title = parlance.t(.signOutButtonText)
             signOutButton.setTitle(title, for: .normal)
         }
     }
-    
-    var sessionsCount = 0
-    let alertControllerBuilder = AlertControllerBuilder(parlance: ReusableUIParlance.shared)
     
     // MARK: Lifecycle
     
@@ -66,15 +67,15 @@ class WelcomeViewController: UIViewController {
     
     func refresh() {
         welcomeLabel.text = welcomeLabelText()
-        sessionCountLabel.text = WelcomeParlance.t(.sessionsCount(sessionsCount))
+        sessionCountLabel.text = parlance.t(.sessionsCount(sessionsCount))
     }
     
     func welcomeLabelText() -> String {
         if let user = User.currentUser {
-            return WelcomeParlance.t(.welcomeMessage(name: user.name))
+            return parlance.t(.welcomeMessage(name: user.name))
         }
         
-        return WelcomeParlance.t(.genericWelcomeMessage)
+        return parlance.t(.genericWelcomeMessage)
     }
 }
 

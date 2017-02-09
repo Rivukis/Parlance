@@ -14,9 +14,8 @@ enum WelcomeParlanceKey {
     case sessionsCount(Int)
 }
 
-final class WelcomeParlance: BaseParlance {
+class WelcomeParlance: BaseParlance {
     typealias _ParlanceCoordinator = ParlanceCoordinator
-    static let shared = WelcomeParlance()
     
     func t(_ key: WelcomeParlanceKey) -> String {
         switch currentLanguage {
