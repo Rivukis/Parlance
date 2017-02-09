@@ -43,15 +43,18 @@ final class TestBaseParlance: BaseParlance {
 }
 
 class BaseParlanceTests: XCTestCase {
-    func testStaticFunctionT() {
+    func testTranslating() {
+        // Given
+        let subject = TestBaseParlance()
+        
         // When translating the key .one
-        let result1 = TestBaseParlance.t(.one)
+        let result1 = subject.t(.one)
         
         // Then should use shared.t()
         XCTAssert(result1 == "one", "should return the translated string 'one'")
         
         // When translating the key .one
-        let result2 = TestBaseParlance.t(.two)
+        let result2 = subject.t(.two)
         
         // Then should use shared.t()
         XCTAssert(result2 == "two", "should return the translated string 'two'")
