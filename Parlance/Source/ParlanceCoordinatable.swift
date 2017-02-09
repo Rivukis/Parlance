@@ -15,6 +15,27 @@ import Foundation
  */
 public protocol ParlanceCoordinatable {
     /**
+     The associated type `Language`.
+     
+     - Important: Best if Language is an enum.
+     - Note: Can be inferred by specifying the type in the function `category(for:language:)`
+     
+     ## Example Implementation ##
+     ```
+     enum Language {
+        case english
+        case spanish
+     }
+     
+     // Specifying the type using type-inference.
+     func category(for: Int, language: Language) -> PluralCategory {
+        // ...
+     }
+     ```
+     */
+    associatedtype _Language
+    
+    /**
      The shared instance.
      
      ## Example Implementation ##
@@ -43,7 +64,7 @@ public protocol ParlanceCoordinatable {
      - Parameter locale: The current `Locale` returned by the system.
      - Returns: The Language that Parlance will use.
      */
-    func currentLanguage(for locale: Locale) -> Language
+    func currentLanguage(for locale: Locale) -> _Language
     
     /**
      The `PluralCategory` to use for a given `Int` and `Language`.
@@ -78,28 +99,7 @@ public protocol ParlanceCoordinatable {
      - Parameter language: The `Language` used to determine the `PluralCategory`.
      - Returns: the `PluralCategory` for the given `Int` and `Language`.
      */
-    func category(for int: Int, language: Language) -> PluralCategory
-    
-    /**
-     The associated type `Language`.
-     
-     - Important: Best if Language is an enum.
-     - Note: Can be inferred by specifying the type in the function `category(for:language:)`
-     
-     ## Example Implementation ##
-     ```
-     enum Language {
-         case english
-         case spanish
-     }
-     
-     // Specifying the type using type-inference.
-     func category(for: Int, language: Language) {
-         // ...
-     }
-     ```
-     */
-    associatedtype Language
+    func category(for int: Int, language: _Language) -> PluralCategory
 }
 
 public extension ParlanceCoordinatable {
@@ -114,7 +114,7 @@ public extension ParlanceCoordinatable {
      }
      ```
      */
-    var currentLanguage: Language {
+    var currentLanguage: _Language {
         return currentLanguage(for: Locale.current)
     }
     

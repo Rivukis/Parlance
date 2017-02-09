@@ -32,6 +32,26 @@
  */
 public protocol BaseParlance {
     /**
+     The associated type `Key`.
+     
+     - Important: Best if `Key` is an enum. If `Key` is an enum then use associated values for dynamic inputs into the localization process.
+     - Note: Can be inferred by specifying the type in the function `t(key:)`
+     
+     ## Example Implementation ##
+     ```
+     enum SignInParlanceKey {
+         case welcomeMessage(name: String)
+     }
+     
+     // Specifying the type using type-inference.
+     func t(_ key: SignInParlanceKey) {
+         // ...
+     }
+     ```
+     */
+    associatedtype Key
+    
+    /**
      The associated type `_ParlanceCoordinator`. Must conform to `ParlanceCoordinatable`.
           
      ## Example Implementation ##
@@ -62,26 +82,6 @@ public protocol BaseParlance {
      - Returns: The localized and/or pluralized `String`.
      */
     func t(_ key: Key) -> String
-    
-    /**
-     The associated type `Key`.
-     
-     - Important: Best if `Key` is an enum. If `Key` is an enum then use associated values for dynamic inputs into the localization process.
-     - Note: Can be inferred by specifying the type in the instance function `t(key:)`
-     
-     ## Example Implementation ##
-     ```
-     enum SignInParlanceKey {
-         case welcomeMessage(name: String)
-     }
-     
-     // Specifying the type using type-inference.
-     func t(_ key: SignInParlanceKey) {
-         // ...
-     }
-     ```
-     */
-    associatedtype Key
 }
 
 public extension BaseParlance {
@@ -100,7 +100,7 @@ public extension BaseParlance {
      }
      ```
      */
-    var currentLanguage: _ParlanceCoordinator.Language {
+    var currentLanguage: _ParlanceCoordinator._Language {
         return _ParlanceCoordinator.shared.currentLanguage
     }
 }

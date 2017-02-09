@@ -9,7 +9,7 @@
 /**
  Types conforming to `SpecificParlance` are **used** to translate `Key` into a `String` localized and/or pluralized for a specific `Language`.
  
- - Note: Types conforming to `SpecificParlance` should ONLY be used by types conforming to `BaseParlance.`
+ - Note: Types conforming to `SpecificParlance` should ONLY need to be used by types conforming to `BaseParlance.`
  
  ## Example Implementation ##
  ```swift
@@ -36,6 +36,26 @@
  ```
  */
 public protocol SpecificParlance {
+    /**
+     The associated type `Key`.
+     
+     - Important: Best if `Key` is an enum. If `Key` is an enum then use associated values for dynamic inputs into the localization process.
+     - Note: Can be inferred by specifying the type in the function `t(key:)`
+     
+     ## Example Implementation ##
+     ```
+     enum SignInParlanceKey {
+         case welcomeMessage(name: String)
+     }
+     
+     // Specifying the type using type-inference.
+     func t(_ key: SignInParlanceKey) {
+         // ...
+     }
+     ```
+     */
+    associatedtype Key
+    
     /**
      The associated type `_ParlanceCoordinator`. Must conform to `ParlanceCoordinatable`.
      
@@ -71,7 +91,7 @@ public protocol SpecificParlance {
     /**
      The function used to translate `Key` into a `String` localized and/or pluralized for a specific `Language`. The `Language` should be static for each type conforming to `SpecificParlance`.
      
-     - Important: ONLY call this function from a `BaseParlance`.
+     - Important: Should ONLY need to call this function from a `BaseParlance`.
      
      ## Example Implementation ##
      ```swift
@@ -87,26 +107,6 @@ public protocol SpecificParlance {
      - Returns: The localized and/or pluralized `String`.
      */
     static func t(_ key: Key) -> String
-    
-    /**
-     The associated type `Key`.
-     
-     - Important: Best if `Key` is an enum. If `Key` is an enum then use associated values for dynamic inputs into the localization process.
-     - Note: Can be inferred by specifying the type in the instance function `t(key:)`
-     
-     ## Example Implementation ##
-     ```
-     enum SignInParlanceKey {
-         case welcomeMessage(name: String)
-     }
-     
-     // Specifying the type using type-inference.
-     func t(_ key: SignInParlanceKey) {
-         // ...
-     }
-     ```
-     */
-    associatedtype Key
 }
 
 public extension SpecificParlance where _PluralCategory.RawValue == String {
