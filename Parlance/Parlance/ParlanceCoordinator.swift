@@ -13,6 +13,16 @@ enum Language {
     case spanish
 }
 
+enum EnglishPluralCategory: String {
+    case one
+    case other
+}
+
+enum SpanishPluralCategory: String {
+    case one
+    case other
+}
+
 final class ParlanceCoordinator: ParlanceCoordinatable {
     static let shared = ParlanceCoordinator()
     

@@ -15,11 +15,9 @@
 		7A242F8C1E38A26300FA7A5E /* PluralCategory.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7A242F871E38A26300FA7A5E /* PluralCategory.swift */; };
 		7A242F8D1E38A26300FA7A5E /* SpecificParlance.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7A242F881E38A26300FA7A5E /* SpecificParlance.swift */; };
 		7A242F911E38A3F900FA7A5E /* SignInParlance.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7A242F901E38A3F900FA7A5E /* SignInParlance.swift */; };
-		7A242F941E38A50200FA7A5E /* EnglishParlance.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7A242F931E38A50200FA7A5E /* EnglishParlance.swift */; };
 		7A242F961E38A51B00FA7A5E /* ParlanceCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7A242F951E38A51B00FA7A5E /* ParlanceCoordinator.swift */; };
 		7A242F981E38AA5000FA7A5E /* WelcomeParlance.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7A242F971E38AA5000FA7A5E /* WelcomeParlance.swift */; };
 		7A242F9A1E38AC0C00FA7A5E /* ReusableUIParlance.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7A242F991E38AC0C00FA7A5E /* ReusableUIParlance.swift */; };
-		7A242F9C1E38ADBB00FA7A5E /* SpanishParlance.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7A242F9B1E38ADBB00FA7A5E /* SpanishParlance.swift */; };
 		7A69D0D21E388824008C9C61 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7A69D0D11E388824008C9C61 /* AppDelegate.swift */; };
 		7A69D0D71E388825008C9C61 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 7A69D0D51E388825008C9C61 /* Main.storyboard */; };
 		7A69D0D91E388825008C9C61 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 7A69D0D81E388825008C9C61 /* Assets.xcassets */; };
@@ -28,6 +26,12 @@
 		7A830D261E4C2F1800358A23 /* ParlanceCoordinatableTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7A830D251E4C2F1800358A23 /* ParlanceCoordinatableTests.swift */; };
 		7A830D281E4C477100358A23 /* BaseParlanceTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7A830D271E4C477100358A23 /* BaseParlanceTests.swift */; };
 		7A830D2A1E4C4E0C00358A23 /* SpecificParlanceTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7A830D291E4C4E0C00358A23 /* SpecificParlanceTests.swift */; };
+		7ABE951B1E4E363A00180CF5 /* ReusableUIParlance_en.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7ABE951A1E4E363A00180CF5 /* ReusableUIParlance_en.swift */; };
+		7ABE951D1E4E365400180CF5 /* ReusableUIParlance_es.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7ABE951C1E4E365400180CF5 /* ReusableUIParlance_es.swift */; };
+		7ABE951F1E4E36BF00180CF5 /* SignInParlance_en.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7ABE951E1E4E36BF00180CF5 /* SignInParlance_en.swift */; };
+		7ABE95211E4E36C700180CF5 /* SignInParlance_es.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7ABE95201E4E36C700180CF5 /* SignInParlance_es.swift */; };
+		7ABE95251E4E373500180CF5 /* WelcomeParlance_es.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7ABE95241E4E373500180CF5 /* WelcomeParlance_es.swift */; };
+		7ABE95271E4E374C00180CF5 /* WelcomeParlance_en.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7ABE95261E4E374C00180CF5 /* WelcomeParlance_en.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -49,11 +53,9 @@
 		7A242F871E38A26300FA7A5E /* PluralCategory.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = PluralCategory.swift; path = Source/PluralCategory.swift; sourceTree = "<group>"; };
 		7A242F881E38A26300FA7A5E /* SpecificParlance.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; lineEnding = 0; name = SpecificParlance.swift; path = Source/SpecificParlance.swift; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.swift; };
 		7A242F901E38A3F900FA7A5E /* SignInParlance.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; lineEnding = 0; name = SignInParlance.swift; path = SignInModule/SignInParlance.swift; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.swift; };
-		7A242F931E38A50200FA7A5E /* EnglishParlance.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; lineEnding = 0; name = EnglishParlance.swift; path = Parlance/EnglishParlance.swift; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.swift; };
 		7A242F951E38A51B00FA7A5E /* ParlanceCoordinator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; lineEnding = 0; name = ParlanceCoordinator.swift; path = Parlance/ParlanceCoordinator.swift; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.swift; };
 		7A242F971E38AA5000FA7A5E /* WelcomeParlance.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; lineEnding = 0; name = WelcomeParlance.swift; path = WelcomeModule/WelcomeParlance.swift; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.swift; };
 		7A242F991E38AC0C00FA7A5E /* ReusableUIParlance.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; lineEnding = 0; name = ReusableUIParlance.swift; path = ReusableUI/ReusableUIParlance.swift; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.swift; };
-		7A242F9B1E38ADBB00FA7A5E /* SpanishParlance.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; lineEnding = 0; name = SpanishParlance.swift; path = Parlance/SpanishParlance.swift; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.swift; };
 		7A69D0CE1E388824008C9C61 /* Parlance.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Parlance.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		7A69D0D11E388824008C9C61 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		7A69D0D61E388825008C9C61 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -66,6 +68,12 @@
 		7A830D251E4C2F1800358A23 /* ParlanceCoordinatableTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ParlanceCoordinatableTests.swift; sourceTree = "<group>"; };
 		7A830D271E4C477100358A23 /* BaseParlanceTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BaseParlanceTests.swift; sourceTree = "<group>"; };
 		7A830D291E4C4E0C00358A23 /* SpecificParlanceTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SpecificParlanceTests.swift; sourceTree = "<group>"; };
+		7ABE951A1E4E363A00180CF5 /* ReusableUIParlance_en.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ReusableUIParlance_en.swift; path = ReusableUI/ReusableUIParlance_en.swift; sourceTree = "<group>"; };
+		7ABE951C1E4E365400180CF5 /* ReusableUIParlance_es.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ReusableUIParlance_es.swift; path = ReusableUI/ReusableUIParlance_es.swift; sourceTree = "<group>"; };
+		7ABE951E1E4E36BF00180CF5 /* SignInParlance_en.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = SignInParlance_en.swift; path = SignInModule/SignInParlance_en.swift; sourceTree = "<group>"; };
+		7ABE95201E4E36C700180CF5 /* SignInParlance_es.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = SignInParlance_es.swift; path = SignInModule/SignInParlance_es.swift; sourceTree = "<group>"; };
+		7ABE95241E4E373500180CF5 /* WelcomeParlance_es.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = WelcomeParlance_es.swift; path = WelcomeModule/WelcomeParlance_es.swift; sourceTree = "<group>"; };
+		7ABE95261E4E374C00180CF5 /* WelcomeParlance_en.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = WelcomeParlance_en.swift; path = WelcomeModule/WelcomeParlance_en.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -91,6 +99,8 @@
 			children = (
 				7A69D0E41E388917008C9C61 /* WelcomeViewController.swift */,
 				7A242F971E38AA5000FA7A5E /* WelcomeParlance.swift */,
+				7ABE95261E4E374C00180CF5 /* WelcomeParlance_en.swift */,
+				7ABE95241E4E373500180CF5 /* WelcomeParlance_es.swift */,
 			);
 			name = WelcomeModule;
 			sourceTree = "<group>";
@@ -100,6 +110,8 @@
 			children = (
 				7A242F791E388B5A00FA7A5E /* SignInViewController.swift */,
 				7A242F901E38A3F900FA7A5E /* SignInParlance.swift */,
+				7ABE951E1E4E36BF00180CF5 /* SignInParlance_en.swift */,
+				7ABE95201E4E36C700180CF5 /* SignInParlance_es.swift */,
 			);
 			name = SignInModule;
 			sourceTree = "<group>";
@@ -109,6 +121,8 @@
 			children = (
 				7A242F7E1E3899EC00FA7A5E /* AlertControllerBuilder.swift */,
 				7A242F991E38AC0C00FA7A5E /* ReusableUIParlance.swift */,
+				7ABE951A1E4E363A00180CF5 /* ReusableUIParlance_en.swift */,
+				7ABE951C1E4E365400180CF5 /* ReusableUIParlance_es.swift */,
 			);
 			name = ReusableUI;
 			sourceTree = "<group>";
@@ -122,16 +136,6 @@
 				7A242F881E38A26300FA7A5E /* SpecificParlance.swift */,
 			);
 			name = Source;
-			sourceTree = "<group>";
-		};
-		7A242F921E38A4E100FA7A5E /* Parlance */ = {
-			isa = PBXGroup;
-			children = (
-				7A242F951E38A51B00FA7A5E /* ParlanceCoordinator.swift */,
-				7A242F931E38A50200FA7A5E /* EnglishParlance.swift */,
-				7A242F9B1E38ADBB00FA7A5E /* SpanishParlance.swift */,
-			);
-			name = Parlance;
 			sourceTree = "<group>";
 		};
 		7A69D0C51E388824008C9C61 = {
@@ -157,7 +161,7 @@
 			children = (
 				7A69D0D51E388825008C9C61 /* Main.storyboard */,
 				7A69D0D11E388824008C9C61 /* AppDelegate.swift */,
-				7A242F921E38A4E100FA7A5E /* Parlance */,
+				7A242F951E38A51B00FA7A5E /* ParlanceCoordinator.swift */,
 				7A242F7C1E3892DA00FA7A5E /* User.swift */,
 				7A242F801E3899F300FA7A5E /* ReusableUI */,
 				7A242F7B1E388B6200FA7A5E /* SignInModule */,
@@ -296,19 +300,23 @@
 			files = (
 				7A242F891E38A26300FA7A5E /* BaseParlance.swift in Sources */,
 				7A242F7D1E3892DA00FA7A5E /* User.swift in Sources */,
+				7ABE951D1E4E365400180CF5 /* ReusableUIParlance_es.swift in Sources */,
 				7A242F961E38A51B00FA7A5E /* ParlanceCoordinator.swift in Sources */,
 				7A69D0D21E388824008C9C61 /* AppDelegate.swift in Sources */,
+				7ABE95251E4E373500180CF5 /* WelcomeParlance_es.swift in Sources */,
 				7A242F8D1E38A26300FA7A5E /* SpecificParlance.swift in Sources */,
 				7A69D0E51E388917008C9C61 /* WelcomeViewController.swift in Sources */,
-				7A242F941E38A50200FA7A5E /* EnglishParlance.swift in Sources */,
 				7A242F9A1E38AC0C00FA7A5E /* ReusableUIParlance.swift in Sources */,
 				7A242F7F1E3899EC00FA7A5E /* AlertControllerBuilder.swift in Sources */,
+				7ABE951F1E4E36BF00180CF5 /* SignInParlance_en.swift in Sources */,
 				7A242F981E38AA5000FA7A5E /* WelcomeParlance.swift in Sources */,
+				7ABE95271E4E374C00180CF5 /* WelcomeParlance_en.swift in Sources */,
 				7A242F8C1E38A26300FA7A5E /* PluralCategory.swift in Sources */,
+				7ABE95211E4E36C700180CF5 /* SignInParlance_es.swift in Sources */,
 				7A242F8A1E38A26300FA7A5E /* ParlanceCoordinatable.swift in Sources */,
-				7A242F9C1E38ADBB00FA7A5E /* SpanishParlance.swift in Sources */,
 				7A242F911E38A3F900FA7A5E /* SignInParlance.swift in Sources */,
 				7A242F7A1E388B5A00FA7A5E /* SignInViewController.swift in Sources */,
+				7ABE951B1E4E363A00180CF5 /* ReusableUIParlance_en.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
