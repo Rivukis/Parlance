@@ -9,6 +9,8 @@
 /**
  These are the categories of pluralization that a language might have.
  
+ - Important: When making a custom plural category for a specific language be sure to only include cases that are also present here (in `PluralCategory`).
+ 
  - Note: Not all languages use all six categories.
  - Note: For information on plural categories, see [Plural Rules](http://cldr.unicode.org/index/cldr-spec/plural-rules).
  - Note: For information on a specific language's plural rules, see [Plural Rules per Language](http://www.unicode.org/cldr/charts/latest/supplemental/language_plural_rules.html) (Use *Cardinal* type).
